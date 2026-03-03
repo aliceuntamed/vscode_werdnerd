@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 // Lazy load pages for code splitting
 const HomePage = lazy(() => import("./pages/Home/HomePage"));
@@ -55,6 +56,7 @@ export default function App() {
           }
         />
       </Routes>
+      <SpeedInsights />
     </Router>
   );
 }
