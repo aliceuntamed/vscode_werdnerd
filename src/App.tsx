@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 
 import HomePage from "./pages/Home/HomePage";
 import PalettePlaygroundPage from "./pages/PalettePlayground/PalettePlaygroundPage";
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/submit" element={<SubmitWordPage />} />
         <Route path="/games" element={<GamesPage />} />
       </Routes>
+      <Analytics />
     </Router>
   );
 }
