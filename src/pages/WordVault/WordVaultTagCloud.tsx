@@ -1,4 +1,4 @@
-import { Tag } from "../ui/Tag";
+import { Tag } from "../../ui/Tag";
 
 interface WordVaultTagCloudProps {
   tags: string[];

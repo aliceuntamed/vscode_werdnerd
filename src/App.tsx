@@ -9,6 +9,15 @@ const PalettePlaygroundPage = lazy(
 const SubmitWordPage = lazy(() => import("./pages/SubmitWord/SubmitWordPage"));
 const GamesPage = lazy(() => import("./pages/Games/GamesPage"));
 
+// Lazy load individual game pages
+const BogglePage = lazy(() => import("./pages/Games/BogglePage"));
+const WordlePage = lazy(() => import("./pages/Games/WordlePage"));
+const WordSearchPage = lazy(() => import("./pages/Games/WordSearchPage"));
+const TriviaPage = lazy(() => import("./pages/Games/TriviaPage"));
+const HangmanPage = lazy(() => import("./pages/Games/HangmanPage"));
+const BrainTeasersPage = lazy(() => import("./pages/Games/BrainTeasersPage"));
+const CodenamesPage = lazy(() => import("./pages/Games/CodenamesPage"));
+
 // Loading component for lazy routes
 function LoadingSpinner() {
   return (
@@ -22,6 +31,7 @@ export default function App() {
   return (
     <Router>
       <Routes>
+        {/* Home */}
         <Route
           path="/"
           element={
@@ -30,6 +40,8 @@ export default function App() {
             </Suspense>
           }
         />
+
+        {/* Palette Playground */}
         <Route
           path="/palette-playground"
           element={
@@ -38,6 +50,8 @@ export default function App() {
             </Suspense>
           }
         />
+
+        {/* Submit Word */}
         <Route
           path="/submit"
           element={
@@ -46,11 +60,71 @@ export default function App() {
             </Suspense>
           }
         />
+
+        {/* Games Hub */}
         <Route
           path="/games"
           element={
             <Suspense fallback={<LoadingSpinner />}>
               <GamesPage />
+            </Suspense>
+          }
+        />
+
+        {/* Individual Games */}
+        <Route
+          path="/games/boggle"
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <BogglePage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/games/wordle"
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <WordlePage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/games/wordsearch"
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <WordSearchPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/games/trivia"
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <TriviaPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/games/hangman"
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <HangmanPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/games/brainteasers"
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <BrainTeasersPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/games/codenames"
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <CodenamesPage />
             </Suspense>
           }
         />
