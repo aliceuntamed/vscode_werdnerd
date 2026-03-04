@@ -1,5 +1,5 @@
-import dictionary from "../data/boggleWords.json";
-import freq from "../data/letterFrequency.json";
+import dictionary from "./src/data/boggleWords.json";
+import freq from "./data/letterFrequency.json";
 import { generateBoard } from "./generateBoard";
 import { existsOnBoard } from "./existsOnBoard";
 import { scoreWord } from "./scoreWord";
