@@ -1,4 +1,4 @@
-import { Tag } from "../../ui/Tag";
+import { Tag } from "../../components/ui/Tag";
 
 interface WordVaultTagCloudProps {
   tags: string[];
@@ -13,7 +13,7 @@ export function WordVaultTagCloud({
 }: WordVaultTagCloudProps) {
   return (
     <div className="flex flex-wrap gap-3">
-      {tags.map((tag, i) => (
+      {tags.map((tag: string, i: number) => (
         <Tag
           key={tag}
           label={tag}

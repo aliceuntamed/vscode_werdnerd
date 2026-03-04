@@ -1,14 +1,11 @@
 import { Heart } from "lucide-react";
 import { WerdTagList } from "./WerdTagList";
+import { Werd } from "../../../types/Werd";
 
-interface WerdCardProps {
-  word: string;
-  pronunciation?: string;
+interface WerdCardProps extends Werd {
   partOfSpeech?: string;
-  meaning: string;
   funfact?: string;
   source?: string;
-  tags: string[];
   isFavorite?: boolean;
   onToggleFavorite?: () => void;
 }
