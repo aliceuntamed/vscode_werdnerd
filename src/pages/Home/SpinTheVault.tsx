@@ -65,15 +65,7 @@ export default function SpinTheVault() {
 
       {/* Result */}
       {werd ? (
-        <WerdCard
-          word={werd.word}
-          pronunciation={werd.pronunciation}
-          partOfSpeech={werd.partOfSpeech}
-          meaning={werd.meaning}
-          funfact={werd.funfact}
-          source={werd.source}
-          tags={werd.tags}
-        />
+        <WerdCard {...werd} />
       ) : (
         <p className="font-body text-white/50 italic">
           Spin the vault to reveal a random word.

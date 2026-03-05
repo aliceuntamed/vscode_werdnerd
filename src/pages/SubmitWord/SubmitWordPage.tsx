@@ -1,19 +1,4 @@
 import SubmitWordForm from "./SubmitWordForm";
-import { insertWerd } from "../../utils/supabase/queries/werds";
-
-async function handleSubmit(form: FormValues) {
-  const newWerd = await insertWerd({
-    word: form.word,
-    pronunciation: form.pronunciation,
-    partOfSpeech: form.partOfSpeech,
-    meaning: form.meaning,
-    funfact: form.funfact,
-    source: form.source,
-    tags: form.tags,
-  });
-
-  console.log("Inserted:", newWerd);
-}
 
 export default function SubmitWordPage() {
   return (

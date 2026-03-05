@@ -1,9 +1,9 @@
-import { Werd } from "../types/Werd";
-import { supabase } from "../utils/supabase/client";
+import type { Werd } from "../../../types";
+import { supabase } from "../client";
 
-export async function getAllWords() {
+export async function getAllWerds() {
   const { data, error } = await supabase
-    .from("words")
+    .from("werds")
     .select("*")
     .returns<Werd[]>();
 

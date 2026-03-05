@@ -1,0 +1,1 @@
+export {dbWords} from './dbWords';

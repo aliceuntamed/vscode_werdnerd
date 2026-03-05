@@ -43,7 +43,7 @@ export type Database = {
         Row: {
           created_at: string | null;
           fact: string;
-          fact_tag: string | null;
+          fact_category: string | null;
           fact_id: string;
           note: string | null;
           source: string | null;
@@ -51,7 +51,7 @@ export type Database = {
         Insert: {
           created_at?: string | null;
           fact: string;
-          fact_tag?: string | null;
+          fact_category?: string | null;
           fact_id?: string;
           note?: string | null;
           source?: string | null;
@@ -59,7 +59,7 @@ export type Database = {
         Update: {
           created_at?: string | null;
           fact?: string;
-          fact_tag?: string | null;
+          fact_category?: string | null;
           fact_id?: string;
           note?: string | null;
           source?: string | null;

@@ -12,7 +12,7 @@ export default function WordVault({ allTags, words }: WordVaultProps) {
   const [activeTag, setActiveTag] = useState<string | null>(null);
 
   const filtered = activeTag
-    ? words.filter((w) => w.tags.includes(activeTag))
+    ? words.filter((w) => w.tags?.includes(activeTag))
     : words;
 
   return (

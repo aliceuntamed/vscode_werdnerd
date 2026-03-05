@@ -1,35 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
-import { useState, useEffect } from "react";
-import { supabase } from "@/utils/supabase/client";
-
-function Page() {
-  const [todos, setTodos] = useState<string[]>([]);
-
-  useEffect(() => {
-    async function getTodos() {
-      const { data: todos } = await supabase.from("todos").select();
-
-      if (todos && todos.length > 1) {
-        setTodos(todos);
-      }
-    }
-
-    getTodos();
-  }, []);
-
-  return (
-    <div>
-      <ul>
-        {todos.map((todo) => (
-          <li key={todo}>{todo}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-export default Page;
 
 // Lazy load pages for code splitting
 const HomePage = lazy(() => import("./pages/Home/HomePage"));

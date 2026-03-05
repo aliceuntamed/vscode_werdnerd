@@ -10,8 +10,6 @@ export default function Navigation() {
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
-  const isActive = (path: string) => location.pathname === path;
-
   return (
     <header className="fixed top-0 left-0 w-full h-16 z-50 bg-black/70 backdrop-blur-md border-b border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.4)] flex items-center">
       <nav className="w-full max-w-6xl mx-auto px-6 flex items-center justify-between">
@@ -38,11 +36,27 @@ export default function Navigation() {
 
         {/* Desktop Links */}
         <nav className="hidden md:flex items-center gap-8">
-          <NavLink to="/" label="Home" />
-          <NavLink to="/vault" label="Vault" />
-          <NavLink to="/submit" label="Submit Word" />{" "}
-          {/* NEW — between Vault and Games */}
-          <NavLink to="/games" label="Games" />
+          <Link to="/" className="text-white hover:text-white/80 transition">
+            Home
+          </Link>
+          <Link
+            to="/vault"
+            className="text-white hover:text-white/80 transition"
+          >
+            Vault
+          </Link>
+          <Link
+            to="/submit"
+            className="text-white hover:text-white/80 transition"
+          >
+            Submit Word
+          </Link>
+          <Link
+            to="/games"
+            className="text-white hover:text-white/80 transition"
+          >
+            Games
+          </Link>
         </nav>
 
         {/* Mobile Toggle */}
@@ -78,11 +92,27 @@ export default function Navigation() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden flex flex-col gap-6 mt-6">
-          <MobileLink to="/" label="Home" />
-          <MobileLink to="/vault" label="Vault" />
-          <MobileLink to="/submit" label="Submit Word" />{" "}
-          {/* NEW — same order */}
-          <MobileLink to="/games" label="Games" />
+          <Link to="/" className="text-white hover:text-white/80 transition">
+            Home
+          </Link>
+          <Link
+            to="/vault"
+            className="text-white hover:text-white/80 transition"
+          >
+            Vault
+          </Link>
+          <Link
+            to="/submit"
+            className="text-white hover:text-white/80 transition"
+          >
+            Submit Word
+          </Link>
+          <Link
+            to="/games"
+            className="text-white hover:text-white/80 transition"
+          >
+            Games
+          </Link>
         </div>
       )}
     </header>

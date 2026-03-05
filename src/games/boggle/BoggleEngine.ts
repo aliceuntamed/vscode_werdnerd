@@ -1,15 +1,17 @@
-import dictionary from "./src/data/boggleWords.json";
-import freq from "./data/letterFrequency.json";
-import { generateBoard } from "./generateBoard";
-import { existsOnBoard } from "./existsOnBoard";
-import { scoreWord } from "./scoreWord";
+import dictionary from "../../data/boggleWords.json";
+import freq from "../../data/letterFrequency.json";
+import { generateBoard } from "../../games/boggle/generateBoard";
+import { existsOnBoard } from "../../games/boggle/existsOnBoard";
+import { scoreWord } from "../../games/boggle/scoreWord";
 
 export class BoggleEngine {
   board: string[][];
   dictionary: Set<string>;
 
   constructor() {
-    this.dictionary = new Set(dictionary.map((w) => w.toLowerCase()));
+    this.dictionary = new Set(
+      Object.keys(dictionary).map((w: string) => w.toLowerCase()),
+    );
     this.board = generateBoard(freq);
   }
 

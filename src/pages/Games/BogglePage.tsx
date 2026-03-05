@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BoggleEngine } from "../../games/boggle/BoggleEngine";
-import { BoggleBoard } from "../../components/games/boggle/BoggleBoard";
+import { BoggleBoard } from "../../components/games/BoggleBoard";
 
 export default function BogglePage() {
   const [engine] = useState(() => new BoggleEngine());

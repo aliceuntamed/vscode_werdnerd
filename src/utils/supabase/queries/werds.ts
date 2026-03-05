@@ -1,7 +1,7 @@
 import { supabase } from "../client";
-import type { Werd } from "../../../types/Werd";
+import type { Werd } from "../../../types";
 
-export async function insertWerd(werd: Omit<Werd, "id">): Promise<Werd> {
+export async function insertWerd(werd: Omit<Werd, "id">): Promise<Werd | null> {
   const { data, error } = await supabase
     .from("werds")
     .insert(werd)
@@ -10,7 +10,7 @@ export async function insertWerd(werd: Omit<Werd, "id">): Promise<Werd> {
     .returns<Werd>();
 
   if (error) throw error;
-  return data;
+  return data && typeof data === "object" && "werd_id" in data ? data : null;
 }
 
 export async function getRandomWerd(): Promise<Werd | null> {

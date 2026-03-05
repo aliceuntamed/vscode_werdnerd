@@ -1,9 +1,8 @@
 import { supabase } from "../client";
-import type { Werd } from "../../../types";
 
 export async function getAllTags() {
   const { data, error } = await supabase
-    .from("words")
+    .from("werds")
     .select("tags")
     .returns<{ tags: string[] }[]>();
 
