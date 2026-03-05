@@ -1,4 +1,4 @@
-import { WordCard } from "../../components/werd/WerdCard";
+import { WerdCard } from "../../components/werd/WerdCard";
 
 const sampleWerds = [
   {
@@ -68,7 +68,7 @@ export function QuickBrowse() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {sampleWerds.map((item, i) => (
-            <WordCard
+            <WerdCard
               key={i}
               word={item.word}
               pronunciation={item.pronunciation}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { supabase } from "../../utils/supabase/client";
-import { WerdCard } from "../werd/WerdCard";
+import { WerdCard } from "../../components/werd/WerdCard";
 import { Shuffle } from "lucide-react";
 
 export default function SpinTheVault() {
