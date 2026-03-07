@@ -1,19 +1,16 @@
+/// <reference types="vitest/config" />
 import path from "path";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 // https://vite.dev/config/
+import { fileURLToPath } from "node:url";
+
 export default defineConfig({
-  plugins: [
-    react({
-      babel: {
-        plugins: [["babel-plugin-react-compiler"]],
-      },
-    }),
-  ],
+  plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(path.dirname(fileURLToPath(import.meta.url)), "./src"),
     },
   },
   assetsInclude: ["**/*.svg", "**/*.csv"],

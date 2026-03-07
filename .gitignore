@@ -32,3 +32,6 @@ notes/.tutorialstepsfordev
 *.sw?
 .env
 
+
+*storybook.log
+storybook-static
