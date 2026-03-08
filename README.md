@@ -61,10 +61,29 @@ Built with:
 ```bash
 npm install
 npm run dev
+```
 
-Environment variables required:
+Environment variables required: 
 VITE_SUPABASE_URL=
 VITE_SUPABASE_ANON_KEY=
 
-📦 Build
+## 📦 Build
+
+```
 npm run build
+```
+
+## 🧪 CI Pipeline
+
+• 	Build-only workflow
+• 	Supabase env vars injected via GitHub Secrets
+• 	No linting or bundle analysis (optional to re-enable later)
+
+## 🤝 Contributing
+
+See  CONTRIBUTING.md for full guidelines.
+
+## 📜 License
+
+MIT
+
