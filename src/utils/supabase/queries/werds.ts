@@ -1,47 +1,26 @@
-import { supabase } from "../client";
 import type { Werd } from "../../../types";
+import {
+  getWordOfTheDay as getLocalWordOfTheDay,
+  getAllWerds as getLocalAllWerds,
+  getAllTags as getLocalAllTags,
+} from "../../../data/werds";
 
-export async function insertWerd(werd: Omit<Werd, "id">): Promise<Werd | null> {
-  const { data, error } = await supabase
-    .from("werds")
-    .insert(werd)
-    .select()
-    .single()
-    .returns<Werd>();
-
-  if (error) throw error;
-  return data && typeof data === "object" && "werd_id" in data ? data : null;
+export async function insertWerd(
+  _werd: Omit<Werd, "werd_id">,
+): Promise<Werd | null> {
+  // For local data, we'll just return null (can't insert to static data)
+  console.warn("insertWerd not supported with local data");
+  return null;
 }
 
 export async function getRandomWerd(): Promise<Werd | null> {
-  const { data, error } = await supabase
-    .from("werds")
-    .select("*")
-    .order("random()")
-    .limit(1);
-
-  if (error) throw error;
-  return data && data.length > 0 ? data[0] : null;
+  return await getLocalWordOfTheDay();
 }
+
 export async function getAllWerds(): Promise<Werd[]> {
-  const { data, error } = await supabase
-    .from("werds")
-    .select("*")
-    .returns<Werd[]>();
-
-  if (error) throw error;
-  return data ?? [];
+  return await getLocalAllWerds();
 }
+
 export async function getAllTags(): Promise<string[]> {
-  const { data, error } = await supabase
-    .from("werds")
-    .select("tags")
-    .returns<{ tags: string[] }[]>();
-
-  if (error) throw error;
-
-  const tagSet = new Set<string>();
-  data.forEach((row) => row.tags.forEach((t) => tagSet.add(t)));
-
-  return Array.from(tagSet);
+  return getLocalAllTags();
 }
