@@ -59,7 +59,11 @@ export default function WOTD() {
       )}
 
       {/* Tags */}
-      {wotd.tags && <WerdTagList tags={[wotd.tags]} />}
+      {wotd.tags && (
+        <WerdTagList
+          tags={Array.isArray(wotd.tags) ? wotd.tags : [wotd.tags]}
+        />
+      )}
 
       {/* Meaning */}
       <p className="font-body text-white/80 mt-4 leading-relaxed">

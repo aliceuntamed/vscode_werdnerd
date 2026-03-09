@@ -66,7 +66,15 @@ export function WerdCard({
       )}
 
       {/* Tags */}
-      {tags && <WerdTagList tags={tags.split(",")} />}
+      {tags && (
+        <WerdTagList
+          tags={
+            Array.isArray(tags)
+              ? (tags as string[])
+              : (tags as string).split(",")
+          }
+        />
+      )}
 
       {/* Definition */}
       <p className="font-body text-white/80 mt-4 leading-relaxed">

@@ -4,10 +4,14 @@ export interface Werd {
   pronunciation?: string;
   definition?: string;
   part_of_speech?: string;
-  tags?: string;
+  tags?: string | readonly string[];
   is_curated?: boolean;
   created_at?: string;
   updated_at?: string;
+  language?: string;
+  created_by?: string;
+  created_on?: string;
+  source?: string;
 }
 
 export interface WOTDResponse {

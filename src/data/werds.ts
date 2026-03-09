@@ -54,7 +54,7 @@ export const WERDS = [
     part_of_speech: "n.",
     definition: "Fear of heights (also referred to as 'hypsophobia')",
     language: "English",
-    tags: ["psychology", "phobia"]
+    tags: ["psychology", "phobia"],
     is_curated: false,
     created_by: "S Kalynn",
     created_on: "3/7/2026",
@@ -78,7 +78,7 @@ export const WERDS = [
     part_of_speech: "adj.",
     definition: "full of trouble",
     language: "Latin",
-    tags: ["obsolete","translations"],
+    tags: ["obsolete", "translations"],
     is_curated: false,
     created_by: "S Kalynn",
     created_on: "3/7/2026",
@@ -113,7 +113,8 @@ export const WERDS = [
     werd: "akrasia",
     pronunciation: "uh-KRAY-zhuh",
     part_of_speech: "n.",
-    definition: "the state of mind in which someone acts against their better judgment through weakness of will; lack of self control",
+    definition:
+      "the state of mind in which someone acts against their better judgment through weakness of will; lack of self control",
     language: "English",
     tags: ["philosophical", "psychology", "obscure"],
     is_curated: true,
@@ -138,7 +139,8 @@ export const WERDS = [
     tags: "romantic",
     pronunciation: "uh - LOOR",
     part_of_speech: "n.",
-    definition: "The quality of being powerfully and mysteriously attractive or fascinating.",
+    definition:
+      "The quality of being powerfully and mysteriously attractive or fascinating.",
     language: "English",
     is_curated: true,
     created_by: "S Kalynn",
@@ -147,7 +149,7 @@ export const WERDS = [
   {
     werd_id: "52fd2e50-1aab-11f1-a702-7f252db467e13",
     werd: "anatidaephobia",
-    tags: "psychology", "humorous",
+    tags: ["psychology", "humorous"],
     pronunciation: "an-uh-TID-uh-FOE-bee-uh",
     part_of_speech: "n.",
     definition: "Fear that a duck is watching you.",
@@ -162,7 +164,8 @@ export const WERDS = [
     tags: ["romantic", "obscure"],
     pronunciation: "an-uh-si-FIL-ee-uh",
     part_of_speech: "n.",
-    definition: "the act of falling in love with someone entirely inappropriate, by someone who should know better",
+    definition:
+      "the act of falling in love with someone entirely inappropriate, by someone who should know better",
     language: "English",
     is_curated: true,
     created_by: "S Kalynn",
@@ -174,7 +177,8 @@ export const WERDS = [
     tags: "psychology",
     pronunciation: "an-hee-doh-nee-uh",
     part_of_speech: "n.",
-    definition: "a psychological condition characterized by the inability to experience pleasure or interest in activities that were previously enjoyable. It is a common symptom of depression, but can also occur in other mental health conditions, such as anxiety, schizophrenia",
+    definition:
+      "a psychological condition characterized by the inability to experience pleasure or interest in activities that were previously enjoyable. It is a common symptom of depression, but can also occur in other mental health conditions, such as anxiety, schizophrenia",
     language: "English",
     is_curated: true,
     created_by: "S Kalynn",
@@ -250,7 +254,8 @@ export const WERDS = [
     tags: ["psychology", "phobia"],
     pronunciation: "ath‑uh‑zag‑or‑uh‑FOH‑bee‑uh",
     part_of_speech: "n.",
-    definition: "the fear of forgetting, being forgotten or ignored, or being replaced",
+    definition:
+      "the fear of forgetting, being forgotten or ignored, or being replaced",
     language: "English",
     is_curated: true,
     source: "https://www.fearof.net/?s=athazagoraphobia",
@@ -305,7 +310,8 @@ export const WERDS = [
     definition: "A lover of books.",
     language: "English",
     is_curated: true,
-    source: "https://www.google.com/search?sca_esv=7f3b3e58f08bcb9f&sxsrf=AE3TifM4CMockFqgzCPIqrACXak3FaAsZQ%3A1748247874161&q=Bibliophile&sa=X&ved=2ahUKEwiX75Ls2sCNAxW3D9AFHRXmDLoQxccNegUIsgEQAQ&mstk=AUtExfC917OD-P9fTwhNzwNIrOVLqm1NqGBihWYCLCG2pmHFyv9F5mmd7hUWMQHpKWwp3x_5lopl_TiIlahQUR_X-AKhOxcjvy5efgCoKW0GYkhDXBgbyQEDtLKqslS4ygwfmverqxt4JDEMyaUUQ3jBH5edBOZcHtiqsPGWKltpP8trNuk&csui=3",
+    source:
+      "https://www.google.com/search?sca_esv=7f3b3e58f08bcb9f&sxsrf=AE3TifM4CMockFqgzCPIqrACXak3FaAsZQ%3A1748247874161&q=Bibliophile&sa=X&ved=2ahUKEwiX75Ls2sCNAxW3D9AFHRXmDLoQxccNegUIsgEQAQ&mstk=AUtExfC917OD-P9fTwhNzwNIrOVLqm1NqGBihWYCLCG2pmHFyv9F5mmd7hUWMQHpKWwp3x_5lopl_TiIlahQUR_X-AKhOxcjvy5efgCoKW0GYkhDXBgbyQEDtLKqslS4ygwfmverqxt4JDEMyaUUQ3jBH5edBOZcHtiqsPGWKltpP8trNuk&csui=3",
     created_by: "S Kalynn",
     created_on: "3/7/2026",
   },
@@ -367,7 +373,8 @@ export const WERDS = [
     tags: ["psychology"],
     pronunciation: "kuh-thahr-sis",
     part_of_speech: "n.",
-    definition: "psychotherapy that encourages or permits the discharge of pent-up, socially unacceptable affects.",
+    definition:
+      "psychotherapy that encourages or permits the discharge of pent-up, socially unacceptable affects.",
     language: "English",
     is_curated: true,
     source: "https://www.dictionary.com/browse/catharsis",
@@ -419,7 +426,8 @@ export const WERDS = [
     tags: ["humorous"],
     pronunciation: "kol-ee-wob-uhlz",
     part_of_speech: "n.",
-    definition: "A feeling of nervousness or queasiness; “butterflies in the stomach.”",
+    definition:
+      "A feeling of nervousness or queasiness; “butterflies in the stomach.”",
     language: "English",
     is_curated: true,
     source: "https://www.dictionary.com/browse/collywobbles",
@@ -437,6 +445,9 @@ export const WERDS = [
     is_curated: true,
     source: "https://www.dictionary.com/browse/copacetic",
     created_by: "S Kalynn",
+    created_on: "3/7/2026",
+  },
+  {
     werd_id: "52fd2e50-1aab-11f1-a702-7f252db467e35",
     werd: "cordolium",
     tags: ["translations", "existential"],
@@ -468,7 +479,8 @@ export const WERDS = [
     tags: ["psychology", "existential"],
     pronunciation: "dee-kuh-thekt",
     part_of_speech: "v.",
-    definition: "to withdraw one's feelings of attachment from (a person, idea, or object), as in anticipation of a future loss.",
+    definition:
+      "to withdraw one's feelings of attachment from (a person, idea, or object), as in anticipation of a future loss.",
     language: "English",
     is_curated: true,
     source: "https://www.dictionary.com/browse/decathect",
@@ -585,10 +597,12 @@ export const WERDS = [
     tags: ["new word", "obscure"],
     pronunciation: "eh-ruh-MIH-shun",
     part_of_speech: "n.",
-    definition: "The act of gradually fading from the lives of others, not out of malice but from a desire for solitude or renewal.",
+    definition:
+      "The act of gradually fading from the lives of others, not out of malice but from a desire for solitude or renewal.",
     language: "English",
     is_curated: true,
-    source: "https://rogermckeever.substack.com/p/eremition-the-art-of-disappearing",
+    source:
+      "https://rogermckeever.substack.com/p/eremition-the-art-of-disappearing",
     created_by: "S Kalynn",
     created_on: "3/7/2026",
   },
@@ -601,7 +615,8 @@ export const WERDS = [
     definition: "Beautiful thinking; well mind",
     language: "English",
     is_curated: true,
-    source: "https://philosophy.stackexchange.com/questions/54965/what-is-the-meaning-of-the-term-e%C3%BAnoia",
+    source:
+      "https://philosophy.stackexchange.com/questions/54965/what-is-the-meaning-of-the-term-e%C3%BAnoia",
     created_by: "S Kalynn",
     created_on: "3/7/2026",
   },
@@ -637,7 +652,8 @@ export const WERDS = [
     tags: ["existential", "obscure"],
     pronunciation: "ek-suh-LAN-sis",
     part_of_speech: "n.",
-    definition: "The tendency to stop talking about an experience because others cannot relate to it.",
+    definition:
+      "The tendency to stop talking about an experience because others cannot relate to it.",
     language: "English",
     is_curated: true,
     source: "https://www.thedictionaryofobscuresorrows.com/word/exulansis",
@@ -741,7 +757,8 @@ export const WERDS = [
     tags: ["psychology"],
     pronunciation: "hab‑roh‑MAY‑nee‑uh",
     part_of_speech: "n.",
-    definition: "A form of delusional happiness; a state of unreal or imagined elation.",
+    definition:
+      "A form of delusional happiness; a state of unreal or imagined elation.",
     language: "English",
     is_curated: true,
     source: "https://www.merriam-webster.com/dictionary/habromania",
@@ -757,7 +774,8 @@ export const WERDS = [
     definition: "to say something different from what you meant to say",
     language: "English",
     is_curated: true,
-    source: "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.goodreads.com/quotes/7673265-heterophemize-v-to-say-something-different-from-what-you-mean&ved=2ahUKEwi6lcDotruNAxUp4skDHT8zBFsQFnoECDAQAQ&usg=AOvVaw3tyNn6icvmWEXINl8uhVtN",
+    source:
+      "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.goodreads.com/quotes/7673265-heterophemize-v-to-say-something-different-from-what-you-mean&ved=2ahUKEwi6lcDotruNAxUp4skDHT8zBFsQFnoECDAQAQ&usg=AOvVaw3tyNn6icvmWEXINl8uhVtN",
     created_by: "S Kalynn",
     created_on: "3/7/2026",
   },
@@ -793,7 +811,8 @@ export const WERDS = [
     tags: ["general"],
     pronunciation: "id-ee-oh-sin-krat-ik",
     part_of_speech: "adj.",
-    definition: "pertaining to the nature of idiosyncrasy or something peculiar to an individual.",
+    definition:
+      "pertaining to the nature of idiosyncrasy or something peculiar to an individual.",
     language: "English",
     is_curated: true,
     source: "https://www.dictionary.com/browse/idiosyncratic",
@@ -884,7 +903,8 @@ export const WERDS = [
     tags: ["general"],
     pronunciation: "ih-noor",
     part_of_speech: "v.",
-    definition: "to become immune to something (someone), especially something unpleasant",
+    definition:
+      "to become immune to something (someone), especially something unpleasant",
     language: "English",
     is_curated: true,
     source: "https://www.dictionary.com/browse/inure",
@@ -949,7 +969,8 @@ export const WERDS = [
     tags: ["existential", "obscure"],
     pronunciation: "zhoos-kuh",
     part_of_speech: "n.",
-    definition: "A hypothetical conversation that you compulsively play out in your head. A made-up word from the Dictionary of Obscure Sorrows",
+    definition:
+      "A hypothetical conversation that you compulsively play out in your head. A made-up word from the Dictionary of Obscure Sorrows",
     language: "English",
     is_curated: true,
     source: "https://www.thedictionaryofobscuresorrows.com/word/jouska",
@@ -962,7 +983,8 @@ export const WERDS = [
     tags: ["psychology", "obscure"],
     pronunciation: "kuh‑LOP‑see‑uh",
     part_of_speech: "n.",
-    definition: "The delusion that things are more beautiful than they really are.",
+    definition:
+      "The delusion that things are more beautiful than they really are.",
     language: "English",
     is_curated: true,
     source: "https://www.merriam-webster.com/dictionary/kalopsia",
@@ -975,7 +997,8 @@ export const WERDS = [
     tags: ["translations", "romantic"],
     pronunciation: "KEE‑lig",
     part_of_speech: "n.",
-    definition: "the rush or the inexplicable joy one feels after seeing or experiencing something romantic. Filipino term.",
+    definition:
+      "the rush or the inexplicable joy one feels after seeing or experiencing something romantic. Filipino term.",
     language: "Tagalog",
     is_curated: true,
     source: "https://en.wiktionary.org/wiki/kilig",
@@ -988,7 +1011,8 @@ export const WERDS = [
     tags: ["psychology", "obscure"],
     pronunciation: "lahk-uh-siz-uhm",
     part_of_speech: "n.",
-    definition: "The desire to be struck by disaster-to survive a plane crash or to lose everything in a fire. A made-up word from the Dictionary of Obscure Sorrows",
+    definition:
+      "The desire to be struck by disaster-to survive a plane crash or to lose everything in a fire. A made-up word from the Dictionary of Obscure Sorrows",
     language: "English",
     is_curated: true,
     source: "https://www.thedictionaryofobscuresorrows.com/concept/lachesism",
@@ -1014,7 +1038,8 @@ export const WERDS = [
     tags: ["philosophical", "obscure"],
     pronunciation: "lat-i-tood-n-air-ee-uhn",
     part_of_speech: "n.",
-    definition: "tolerance of other views, particularly, but not necessarily, on religious matters",
+    definition:
+      "tolerance of other views, particularly, but not necessarily, on religious matters",
     language: "English",
     is_curated: true,
     source: "S Kalynn",
@@ -1026,7 +1051,8 @@ export const WERDS = [
     tags: ["psychology", "obscure"],
     pronunciation: "leth-O-loj-i-ka",
     part_of_speech: "n.",
-    definition: "The inability to remember a word or put your finger on the right term.",
+    definition:
+      "The inability to remember a word or put your finger on the right term.",
     language: "English",
     is_curated: true,
     source: "https://www.dictionary.com/e/tip-of-the-tongue/",
@@ -1052,7 +1078,8 @@ export const WERDS = [
     tags: ["translations", "existential"],
     pronunciation: "LEE‑tost",
     part_of_speech: "n.",
-    definition: "A state of grief, torment, or agony triggered by the sudden awareness of one’s own misery.",
+    definition:
+      "A state of grief, torment, or agony triggered by the sudden awareness of one’s own misery.",
     language: "Czech",
     is_curated: true,
     source: "https://www.merriam-webster.com/dictionary/litost",
@@ -1182,7 +1209,8 @@ export const WERDS = [
     tags: ["general", "obscure"],
     pronunciation: "MICK-aw-ber",
     part_of_speech: "n.",
-    definition: "A person who is habitually optimistic, expecting that “something will turn up.”",
+    definition:
+      "A person who is habitually optimistic, expecting that “something will turn up.”",
     language: "English",
     is_curated: true,
     source: "https://www.merriam-webster.com/dictionary/Micawber",
@@ -1234,7 +1262,8 @@ export const WERDS = [
     tags: ["translations", "poetic"],
     pronunciation: "neh-feh-lee-BAH-tuh",
     part_of_speech: "n.",
-    definition: "A dreamer who lives in the clouds of their own imagination; an unconventional, unorthodox person.",
+    definition:
+      "A dreamer who lives in the clouds of their own imagination; an unconventional, unorthodox person.",
     language: "Portuguese",
     is_curated: true,
     source: "https://en.wiktionary.org/wiki/nefelibata",
@@ -1247,7 +1276,8 @@ export const WERDS = [
     tags: ["translations"],
     pronunciation: "nuh-SURE",
     part_of_speech: "n.",
-    definition: "A person who stays up late, especially one who enjoys nightlife.",
+    definition:
+      "A person who stays up late, especially one who enjoys nightlife.",
     language: "French",
     is_curated: true,
     source: "https://en.wiktionary.org/wiki/noceur",
@@ -1260,7 +1290,8 @@ export const WERDS = [
     tags: ["psychology", "humorous", "phobia"],
     pronunciation: "now-muh-fow-bee-uh",
     part_of_speech: "n.",
-    definition: "Fear of being without mobile phone coverage. (NO MObile PHOne phoBIA)",
+    definition:
+      "Fear of being without mobile phone coverage. (NO MObile PHOne phoBIA)",
     language: "English",
     is_curated: true,
     source: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6510111/",
@@ -1286,7 +1317,8 @@ export const WERDS = [
     tags: ["psychology", "general", "obscure"],
     pronunciation: "NIK‑toh‑file",
     part_of_speech: "n.",
-    definition: "a person who loves night; someone who finds comfort in darkness.",
+    definition:
+      "a person who loves night; someone who finds comfort in darkness.",
     language: "English",
     is_curated: true,
     source: "https://en.wiktionary.org/wiki/nyctophile",
@@ -1364,7 +1396,8 @@ export const WERDS = [
     tags: ["psychology", "phobia"],
     pronunciation: "PIH-stuhn-THROH-puh-bee-uh",
     part_of_speech: "n.",
-    definition: "fear of trusting people due to past experiences with relationships gone bad",
+    definition:
+      "fear of trusting people due to past experiences with relationships gone bad",
     language: "English",
     is_curated: true,
     source: "https://en.wiktionary.org/wiki/pistanthrophobia",
@@ -1377,7 +1410,8 @@ export const WERDS = [
     tags: ["general"],
     pronunciation: "pri-var-i-keyt",
     part_of_speech: "v.",
-    definition: "speak or act in an evasive way; to avoid giving a direct answer or telling the truth",
+    definition:
+      "speak or act in an evasive way; to avoid giving a direct answer or telling the truth",
     language: "English",
     is_curated: true,
     source: "https://www.merriam-webster.com/dictionary/prevaricate",
@@ -1403,7 +1437,8 @@ export const WERDS = [
     tags: ["psychology"],
     pronunciation: "sahy-koh-suh-mat-ik",
     part_of_speech: "adj.",
-    definition: "of or relating to a physical disorder that is caused by or notably influenced by emotional factors.",
+    definition:
+      "of or relating to a physical disorder that is caused by or notably influenced by emotional factors.",
     language: "English",
     is_curated: true,
     source: "https://www.merriam-webster.com/dictionary/psychosomatic",
@@ -1455,7 +1490,8 @@ export const WERDS = [
     tags: ["romantic", "obscure"],
     pronunciation: "kwik-sot-ik",
     part_of_speech: "adj.",
-    definition: "extravagantly chivalrous or romantic; visionary, impractical, or impracticable; impulsive and often rashly unpredictable",
+    definition:
+      "extravagantly chivalrous or romantic; visionary, impractical, or impracticable; impulsive and often rashly unpredictable",
     language: "English",
     is_curated: true,
     source: "https://www.merriam-webster.com/dictionary/quixotic",
@@ -1481,7 +1517,8 @@ export const WERDS = [
     tags: ["general"],
     pronunciation: "ri-KAL-si-truhnt",
     part_of_speech: "adj.",
-    definition: "Having an obstinately uncooperative attitude toward authority or discipline.",
+    definition:
+      "Having an obstinately uncooperative attitude toward authority or discipline.",
     language: "English",
     is_curated: true,
     source: "https://www.merriam-webster.com/dictionary/recalcitrant",
@@ -1494,7 +1531,8 @@ export const WERDS = [
     tags: ["general"],
     pronunciation: "ret-uh-suhnt",
     part_of_speech: "adj.",
-    definition: "disposed to be silent or not to speak freely; reluctant or restrained",
+    definition:
+      "disposed to be silent or not to speak freely; reluctant or restrained",
     language: "English",
     is_curated: true,
     source: "https://www.merriam-webster.com/dictionary/reticent",
@@ -1520,7 +1558,8 @@ export const WERDS = [
     tags: ["general"],
     pronunciation: "SANG-gwin",
     part_of_speech: "adj.",
-    definition: "Optimistic or positive, especially in an apparently bad or difficult situation.",
+    definition:
+      "Optimistic or positive, especially in an apparently bad or difficult situation.",
     language: "English",
     is_curated: true,
     source: "https://www.merriam-webster.com/dictionary/sanguine",
@@ -1601,7 +1640,8 @@ export const WERDS = [
     definition: "someone who is always unlucky",
     language: "Yiddish",
     is_curated: true,
-    source: "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.dictionary.com/browse/shlimazl&ved=2ahUKEwim98jCtbuNAxVUMNAFHW9aFgcQFnoECDIQAQ&usg=AOvVaw0QlIBJ8JZPFM1IJ_XBfYR3",
+    source:
+      "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.dictionary.com/browse/shlimazl&ved=2ahUKEwim98jCtbuNAxVUMNAFHW9aFgcQFnoECDIQAQ&usg=AOvVaw0QlIBJ8JZPFM1IJ_XBfYR3",
     created_by: "S Kalynn",
     created_on: "3/7/2026",
   },
@@ -1614,7 +1654,8 @@ export const WERDS = [
     definition: "To enchant, bewitch, or lure as a siren would.",
     language: "English",
     is_curated: true,
-    source: "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.collinsdictionary.com/us/dictionary/english/sirenize&ved=2ahUKEwjVgseDtruNAxWKMdAFHbtcNoQQFnoECDIQAQ&usg=AOvVaw18vGmLKe94Smm-po9g4_Cv",
+    source:
+      "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.collinsdictionary.com/us/dictionary/english/sirenize&ved=2ahUKEwjVgseDtruNAxWKMdAFHbtcNoQQFnoECDIQAQ&usg=AOvVaw18vGmLKe94Smm-po9g4_Cv",
     created_by: "S Kalynn",
     created_on: "3/7/2026",
   },
@@ -1640,7 +1681,8 @@ export const WERDS = [
     definition: "A solitary wanderer.",
     language: "English",
     is_curated: true,
-    source: "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.merriam-webster.com/dictionary/solivagant&ved=2ahUKEwiTj5CitruNAxXiMNAFHfQfFOkQFnoECCAQAQ&usg=AOvVaw0qvWyXi33Rseda9cyZFQtN",
+    source:
+      "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.merriam-webster.com/dictionary/solivagant&ved=2ahUKEwiTj5CitruNAxXiMNAFHfQfFOkQFnoECCAQAQ&usg=AOvVaw0qvWyXi33Rseda9cyZFQtN",
     created_by: "S Kalynn",
     created_on: "3/7/2026",
   },
@@ -1757,7 +1799,8 @@ export const WERDS = [
     definition: "chaos; disorder; confusion.",
     language: "English",
     is_curated: true,
-    source: "https://www.dictionary.com/browse/tohubohu?misspelling=tohu-bohu&noredirect=true",
+    source:
+      "https://www.dictionary.com/browse/tohubohu?misspelling=tohu-bohu&noredirect=true",
     created_by: "S Kalynn",
     created_on: "3/7/2026",
   },
@@ -1819,7 +1862,8 @@ export const WERDS = [
     tags: ["obscure"],
     pronunciation: "ul‑truh‑krep‑ih‑DARE‑ee‑uhn",
     part_of_speech: "n.",
-    definition: "A person who gives opinions on subjects they know nothing about.",
+    definition:
+      "A person who gives opinions on subjects they know nothing about.",
     language: "English",
     is_curated: true,
     source: "",
@@ -1858,7 +1902,8 @@ export const WERDS = [
     tags: ["philosophical"],
     pronunciation: "you-toh-pee-yah",
     part_of_speech: "n.",
-    definition: "an imagined place or state of things in which everything is perfect",
+    definition:
+      "an imagined place or state of things in which everything is perfect",
     language: "English",
     is_curated: true,
     source: "https://www.dictionary.com/browse/utopia",
@@ -1871,7 +1916,8 @@ export const WERDS = [
     tags: ["general"],
     pronunciation: "VAK-yoo-uhs",
     part_of_speech: "adj.",
-    definition: "Having or showing a lack of thought or intelligence; mindless.",
+    definition:
+      "Having or showing a lack of thought or intelligence; mindless.",
     language: "English",
     is_curated: true,
     source: "https://www.merriam-webster.com/dictionary/vacuous",
@@ -1884,7 +1930,8 @@ export const WERDS = [
     tags: ["general"],
     pronunciation: "vay-guh-ree",
     part_of_speech: "n.",
-    definition: "an unpredictable or erratic action, occurrence, course, or instance: the vagaries of weather; the vagaries of the economic scene; a whimsical, wild, or unusual idea, desire, or action.",
+    definition:
+      "an unpredictable or erratic action, occurrence, course, or instance: the vagaries of weather; the vagaries of the economic scene; a whimsical, wild, or unusual idea, desire, or action.",
     language: "English",
     is_curated: true,
     source: "https://www.dictionary.com/browse/vagary",
@@ -1926,7 +1973,8 @@ export const WERDS = [
     definition: "Something forbidden or prohibited.",
     language: "Latin",
     is_curated: true,
-    source: "https://en.wikipedia.org/wiki/Vetitum#:~:text=In%20the%20canon%20law%20of,a%20formal%20petition%20for%20nullity.",
+    source:
+      "https://en.wikipedia.org/wiki/Vetitum#:~:text=In%20the%20canon%20law%20of,a%20formal%20petition%20for%20nullity.",
     created_by: "S Kalynn",
     created_on: "3/7/2026",
   },
@@ -1949,7 +1997,8 @@ export const WERDS = [
     tags: ["psychology", "general", "obscure"],
     pronunciation: "ZEN‑uh‑file",
     part_of_speech: "n.",
-    definition: "A person who is attracted to foreign cultures, people, or customs.",
+    definition:
+      "A person who is attracted to foreign cultures, people, or customs.",
     language: "English",
     is_curated: true,
     source: "https://en.wiktionary.org/wiki/xenophile",
@@ -1962,11 +2011,39 @@ export const WERDS = [
     tags: ["general"],
     pronunciation: "zeel",
     part_of_speech: "n.",
-    definition: "Great energy or enthusiasm in pursuit of a cause or objective.",
+    definition:
+      "Great energy or enthusiasm in pursuit of a cause or objective.",
     language: "English",
     is_curated: true,
     source: "https://www.merriam-webster.com/dictionary/zeal",
     created_by: "S Kalynn",
     created_on: "3/7/2026",
-  }
+  },
 ] as const;
+
+// Helper functions
+export const getAllWerds = () => WERDS.map((werd) => ({ ...werd }));
+
+export const getAllTags = () => {
+  const allTags = new Set<string>();
+  WERDS.forEach((werd) => {
+    if (Array.isArray(werd.tags)) {
+      werd.tags.forEach((tag) => allTags.add(tag as string));
+    } else if (werd.tags) {
+      allTags.add(werd.tags as string);
+    }
+  });
+  return Array.from(allTags);
+};
+
+export const getCuratedPicks = () => {
+  return WERDS.filter((werd) => werd.is_curated).map((werd) => ({ ...werd }));
+};
+
+export const getWordOfTheDay = () => {
+  const today = new Date().toISOString().split("T")[0];
+  const index =
+    today.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0) %
+    WERDS.length;
+  return { ...WERDS[index] };
+};

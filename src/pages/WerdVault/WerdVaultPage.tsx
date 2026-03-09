@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { WordVaultTagCloud } from "./WordVaultTagCloud";
+import { WordVaultTagCloud } from "../../components/ui/WordVaultTagCloud";
 import { WerdCard } from "../../components/werd/WerdCard";
 import type { Werd } from "../../types/index";
 
@@ -25,7 +25,7 @@ export default function WordVault({ allTags, words }: WordVaultProps) {
         <WordVaultTagCloud
           tags={allTags}
           activeTag={activeTag}
-          onSelect={(tag) =>
+          onSelect={(tag: string) =>
             setActiveTag((prev) => (prev === tag ? null : tag))
           }
         />
