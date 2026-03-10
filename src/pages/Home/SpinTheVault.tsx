@@ -1,75 +1,39 @@
 import { useState } from "react";
-import { supabase } from "../../utils/supabase/client";
-import { WerdCard } from "../../components/werd/WerdCard";
 import { Shuffle } from "lucide-react";
+import { WerdCard } from "../../components/werd/WerdCard";
+import { getRandomWerd } from "../../utils/supabase/queries/werds";
+import type { Werd } from "@/types";
 
 export default function SpinTheVault() {
-  const [werd, setWerd] = useState<any>(null);
+  const [werd, setWerd] = useState<Werd | null>(null);
   const [loading, setLoading] = useState(false);
 
   async function spin() {
     setLoading(true);
-
-    const { data, error } = await supabase
-      .from("werds")
-      .select("*")
-      .order("id", { ascending: false });
-
-    if (!error && data.length > 0) {
-      const random = data[Math.floor(Math.random() * data.length)];
-      setWerd(random);
-    }
-
+    const random = await getRandomWerd();
+    setWerd(random);
     setLoading(false);
   }
 
   return (
-    <div
-      className="
-        rounded-xl p-8 bg-[#0b0b0d]
-        border border-white/10
-        shadow-[0_4px_12px_rgba(0,0,0,0.4)]
-      "
-    >
-      {/* Header */}
+    <div className="rounded-xl p-8 bg-[#0b0b0d] border border-white/10 shadow">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="font-heading text-2xl text-white tracking-tight">
-          Spin the Vault
-        </h2>
+        <h2 className="font-heading text-2xl text-white">Spin the Vault</h2>
 
         <button
           onClick={spin}
           disabled={loading}
-          className="
-            flex items-center gap-2 px-5 py-2.5 rounded-lg font-heading text-sm text-white
-            border border-white/20 shadow-sm
-            transition disabled:opacity-40
-          "
-          style={{
-            background: "linear-gradient(135deg, #e5e7eb, #9bbcff, #c084fc)",
-          }}
+          className="flex items-center gap-2 px-5 py-2.5 rounded-lg text-white border border-white/20"
         >
           <Shuffle className="w-4 h-4" />
           {loading ? "Spinning…" : "Spin"}
         </button>
       </div>
 
-      {/* Chrome accent */}
-      <div
-        className="
-          h-[3px] w-1/2 rounded-full mb-8
-          bg-gradient-to-r from-[#e5e7eb] via-[#9bbcff] to-[#c084fc]
-          opacity-70
-        "
-      />
-
-      {/* Result */}
       {werd ? (
-        <WerdCard {...werd} />
+        <WerdCard {...werd} showPartOfSpeech showDefinition />
       ) : (
-        <p className="font-body text-white/50 italic">
-          Spin the vault to reveal a random word.
-        </p>
+        <p className="text-white/50 italic">Spin to reveal a word.</p>
       )}
     </div>
   );

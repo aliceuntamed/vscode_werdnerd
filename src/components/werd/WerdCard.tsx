@@ -1,10 +1,19 @@
-import { Heart } from "lucide-react";
 import { WerdTagList } from "./WerdTagList";
 import type { Werd } from "@/types";
+import { FavoriteToggle } from "../../components/ui/FavoriteToggle";
 
 interface WerdCardProps extends Werd {
   isFavorite?: boolean;
   onToggleFavorite?: () => void;
+
+  // Visibility controls
+  showFavorite?: boolean;
+  showPronunciation?: boolean;
+  showPartOfSpeech?: boolean;
+  showDefinition?: boolean;
+  showTags?: boolean;
+  showLanguage?: boolean;
+  showSource?: boolean;
 }
 
 export function WerdCard({
@@ -13,8 +22,18 @@ export function WerdCard({
   part_of_speech,
   definition,
   tags,
+  language,
+  source,
   isFavorite,
   onToggleFavorite,
+
+  showFavorite = false,
+  showPronunciation = false,
+  showPartOfSpeech = false,
+  showDefinition = true,
+  showTags = true,
+  showLanguage = false,
+  showSource = false,
 }: WerdCardProps) {
   return (
     <div
@@ -36,37 +55,36 @@ export function WerdCard({
             opacity-70
           "
         />
-        <button
-          onClick={onToggleFavorite}
-          className="text-white/40 hover:text-white transition"
-        >
-          <Heart
-            className={`w-5 h-5 ${
-              isFavorite ? "fill-pink-400 text-pink-400" : ""
-            }`}
-          />
-        </button>
+
+        {showFavorite && (
+          <FavoriteToggle isFavorite={isFavorite} onToggle={onToggleFavorite} />
+        )}
       </div>
 
-      {/* Word */}
+      {/* Werd */}
       <h2 className="font-heading text-2xl text-white tracking-tight">
         {werd}
       </h2>
 
       {/* Pronunciation */}
-      {pronunciation && (
+      {showPronunciation && pronunciation && (
         <p className="font-body text-white/50 italic text-sm mt-1">
           /{pronunciation}/
         </p>
       )}
 
       {/* Part of speech */}
-      {part_of_speech && (
+      {showPartOfSpeech && part_of_speech && (
         <p className="font-body text-white/40 text-sm mt-1">{part_of_speech}</p>
       )}
 
+      {/* Language */}
+      {showLanguage && language && (
+        <p className="font-body text-white/40 text-sm mt-1">{language}</p>
+      )}
+
       {/* Tags */}
-      {tags && (
+      {showTags && tags && (
         <WerdTagList
           tags={
             Array.isArray(tags)
@@ -77,9 +95,16 @@ export function WerdCard({
       )}
 
       {/* Definition */}
-      <p className="font-body text-white/80 mt-4 leading-relaxed">
-        {definition}
-      </p>
+      {showDefinition && (
+        <p className="font-body text-white/80 mt-4 leading-relaxed">
+          {definition}
+        </p>
+      )}
+
+      {/* Source */}
+      {showSource && source && (
+        <p className="font-body text-white/40 text-xs mt-4">Source: {source}</p>
+      )}
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { BoggleTile } from "./BoggleTile";
 interface BoggleBoardProps {
   board: string[][];
   selected: number[];
-  onSelect: (index: number) => void;
+  onSelect: (i: number) => void;
 }
 
 export function BoggleBoard({ board, selected, onSelect }: BoggleBoardProps) {

@@ -8,6 +8,8 @@ import { TypographyExperiments } from "./TypographyExperiments";
 import { QuickBrowse } from "./QuickBrowse";
 import { RemixModal } from "./RemixModal";
 
+import { ColorOrbit } from "../../components/ui/ColorOrbit";
+
 export default function PalettePlaygroundPage() {
   return (
     <PageWrapper>
@@ -15,6 +17,12 @@ export default function PalettePlaygroundPage() {
 
       <main className="flex flex-col">
         <Hero />
+
+        {/* ✨ Section Divider Artifact */}
+        <section className="py-24 flex justify-center">
+          <ColorOrbit className="scale-75 opacity-90" />
+        </section>
+
         <PaletteGrid />
         <TypographyExperiments />
         <QuickBrowse />

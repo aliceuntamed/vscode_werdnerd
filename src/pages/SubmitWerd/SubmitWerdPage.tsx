@@ -1,6 +1,6 @@
-import SubmitWordForm from "./SubmitWordForm";
+import SubmitWordForm from "./SubmitWerdForm";
 
-export default function SubmitWordPage() {
+export default function SubmitWerdPage() {
   return (
     <main className="w-full min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#111] text-white py-20 px-6">
       <div className="max-w-3xl mx-auto">

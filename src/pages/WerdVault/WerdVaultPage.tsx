@@ -1,41 +1,50 @@
-import { useState } from "react";
-import { WordVaultTagCloud } from "../../components/ui/WordVaultTagCloud";
+import { useEffect, useState } from "react";
+import { PageWrapper } from "../../components/layout/PageWrapper";
+import { Header } from "../../components/layout/Header";
+import { Footer } from "../../components/layout/Footer";
+import { ChromeSky } from "../../components/ui/ChromeSky";
+
+import { useUser } from "@supabase/auth-helpers-react";
+import { useFavorites } from "../../hooks/useFavorites";
+
 import { WerdCard } from "../../components/werd/WerdCard";
-import type { Werd } from "../../types/index";
+import { getAllWerds } from "../../utils/supabase/queries/werds";
 
-interface WordVaultProps {
-  allTags: string[];
-  words: Werd[];
-}
+export default function WerdVaultPage() {
+  const user = useUser();
+  const { isFavorite, toggle } = useFavorites(user?.id);
 
-export default function WordVault({ allTags, words }: WordVaultProps) {
-  const [activeTag, setActiveTag] = useState<string | null>(null);
+  const [werds, setWerds] = useState([]);
 
-  const filtered = activeTag
-    ? words.filter((w) => w.tags?.includes(activeTag))
-    : words;
+  useEffect(() => {
+    getAllWerds().then(setWerds);
+  }, []);
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-20">
-      <h1 className="font-heading text-4xl text-white tracking-tight mb-10">
-        Word Vault
-      </h1>
+    <PageWrapper>
+      <ChromeSky className="-z-10 opacity-60" density="medium" />
 
-      <div className="mb-12">
-        <WordVaultTagCloud
-          tags={allTags}
-          activeTag={activeTag}
-          onSelect={(tag: string) =>
-            setActiveTag((prev) => (prev === tag ? null : tag))
-          }
-        />
-      </div>
+      <Header />
 
-      <div className="grid md:grid-cols-2 gap-8">
-        {filtered.map((werd) => (
-          <WerdCard key={werd.werd_id} {...werd} />
+      <main className="relative z-10">
+        {werds.map((w) => (
+          <WerdCard
+            key={w.id}
+            {...w}
+            isFavorite={isFavorite(w.id)}
+            onToggleFavorite={() => toggle(w.id)}
+            showFavorite
+            showPronunciation
+            showPartOfSpeech
+            showDefinition
+            showTags
+            showLanguage
+            showSource
+          />
         ))}
-      </div>
-    </div>
+      </main>
+
+      <Footer />
+    </PageWrapper>
   );
 }

@@ -1,16 +1,16 @@
 import { Tag } from "../../components/ui/Tag";
 
-interface WordVaultTagCloudProps {
+interface WerdVaultTagCloudProps {
   tags: string[];
   activeTag?: string | null;
   onSelect: (tag: string) => void;
 }
 
-export function WordVaultTagCloud({
+export function WerdVaultTagCloud({
   tags,
   activeTag,
   onSelect,
-}: WordVaultTagCloudProps) {
+}: WerdVaultTagCloudProps) {
   return (
     <div className="flex flex-wrap gap-3">
       {tags.map((tag: string, i: number) => (

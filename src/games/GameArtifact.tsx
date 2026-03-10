@@ -66,7 +66,7 @@ export function GameArtifact({ game }: GameArtifactProps) {
           </div>
         );
 
-      case "wordle":
+      case "wordle": {
         const letters = ["W", "O", "R", "D", "L"];
         return (
           <div className="flex gap-2">
@@ -89,6 +89,7 @@ export function GameArtifact({ game }: GameArtifactProps) {
             ))}
           </div>
         );
+      }
 
       case "trivia":
         return (
@@ -144,7 +145,7 @@ export function GameArtifact({ game }: GameArtifactProps) {
           </div>
         );
 
-      case "wordsearch":
+      case "wordsearch": {
         const grid = [
           ["W", "O", "R", "D"],
           ["S", "E", "A", "R"],
@@ -196,6 +197,7 @@ export function GameArtifact({ game }: GameArtifactProps) {
             </div>
           </div>
         );
+      }
 
       case "brainteasers":
         return (

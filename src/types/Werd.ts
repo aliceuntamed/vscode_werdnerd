@@ -1,10 +1,10 @@
 export interface Werd {
-  id: string;
-  word: string;
+  werd_id: string;
+  werd: string;
   pronunciation?: string;
-  partOfSpeech?: string;
-  meaning: string;
-  funfact?: string;
+  part_of_speech?: string;
+  definition?: string;
+  language?: string;
+  tags?: string[] | string;
   source?: string;
-  tags: string[];
 }

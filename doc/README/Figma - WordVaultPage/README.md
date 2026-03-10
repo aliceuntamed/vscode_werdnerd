@@ -1,6 +1,6 @@
 # Word Vault Web App
 
-This is a code bundle for WordVault Web App Page. The original project is available at https://www.figma.com/design/bta7I8f3dcC19xFTziN5Ol/Word-Vault-Web-App.
+This is a code bundle for WerdVault Web App Page. The original project is available at https://www.figma.com/design/bta7I8f3dcC19xFTziN5Ol/Word-Vault-Web-App.
 
 ## Running the code
 

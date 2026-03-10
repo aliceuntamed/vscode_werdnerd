@@ -1,26 +1,73 @@
-import type { Werd } from "../../../types";
-import {
-  getWordOfTheDay as getLocalWordOfTheDay,
-  getAllWerds as getLocalAllWerds,
-  getAllTags as getLocalAllTags,
-} from "../../../data/werds";
+import { supabase } from "../client";
+import type { Werd } from "@/types";
 
-export async function insertWerd(
-  _werd: Omit<Werd, "werd_id">,
-): Promise<Werd | null> {
-  // For local data, we'll just return null (can't insert to static data)
-  console.warn("insertWerd not supported with local data");
-  return null;
-}
-
-export async function getRandomWerd(): Promise<Werd | null> {
-  return await getLocalWordOfTheDay();
-}
-
+// Fetch all werds
 export async function getAllWerds(): Promise<Werd[]> {
-  return await getLocalAllWerds();
+  const { data, error } = await supabase
+    .from("werds")
+    .select("*")
+    .order("werd", { ascending: true });
+
+  if (error) {
+    console.error("Error fetching werds:", error);
+    return [];
+  }
+
+  return data as Werd[];
 }
 
-export async function getAllTags(): Promise<string[]> {
-  return getLocalAllTags();
+// Fetch a random werd
+export async function getRandomWerd(): Promise<Werd | null> {
+  const { data, error } = await supabase
+    .from("werds")
+    .select("*")
+    .order("random()")
+    .limit(1);
+
+  if (error) {
+    console.error("Error fetching random werd:", error);
+    return null;
+  }
+
+  return data?.[0] ?? null;
+}
+
+// Fetch WOTD (random each day)
+export async function getWOTD(): Promise<Werd | null> {
+  const today = new Date().toISOString().split("T")[0];
+
+  const { data, error } = await supabase
+    .from("wotd")
+    .select("werd_id, werds(*)")
+    .eq("date", today)
+    .single();
+
+  if (error) {
+    // If no WOTD exists yet, generate one
+    const random = await getRandomWerd();
+    if (!random) return null;
+
+    await supabase.from("wotd").insert({
+      date: today,
+      werd_id: random.werd_id,
+    });
+
+    return random;
+  }
+
+  return data?.werds as Werd | null;
+}
+export async function getCuratedPicks(): Promise<Werd[]> {
+  const { data, error } = await supabase
+    .from("werds")
+    .select("*")
+    .eq("is_curated", true)
+    .order("werd", { ascending: true });
+
+  if (error) {
+    console.error("Error fetching curated picks:", error);
+    return [];
+  }
+
+  return data as Werd[];
 }
