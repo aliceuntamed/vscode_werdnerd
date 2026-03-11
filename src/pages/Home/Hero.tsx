@@ -1,4 +1,4 @@
-import { Flipwords } from "../../components/ui/Flipwords";
+import { Flipwords } from "@/components/ui/Flipwords";
 
 export default function Hero() {
   return (
