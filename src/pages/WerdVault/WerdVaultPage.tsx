@@ -1,9 +1,9 @@
 // pages/WerdVaultPage.tsx
 import { useState } from "react";
-import { useWerds } from "@/hooks/useWerds";
-import { WerdVaultTagCloud } from "../WerdVault/WerdVaultTagCloud";
-import { WerdCard } from "@/components/werd/WerdCard";
-import { ChromeSky } from "@/components/ui/ChromeSky";
+import { useWerds } from "../../hooks/useWerds";
+import { WerdVaultTagCloud } from "../../components/ui/WerdVaultTagCloud";
+import { WerdCard } from "../../components/werd/WerdCard";
+import { ChromeSky } from "../../components/ui/ChromeSky";
 
 export default function WerdVaultPage() {
   const [activeTag, setActiveTag] = useState<string | null>(null);
@@ -32,7 +32,7 @@ export default function WerdVaultPage() {
         ) : (
           <div className="grid gap-6 md:grid-cols-2">
             {werds.map((w) => (
-              <WerdCard key={w.werd_id} werd={w} />
+              <WerdCard key={w.werd_id} {...w} />
             ))}
           </div>
         )}

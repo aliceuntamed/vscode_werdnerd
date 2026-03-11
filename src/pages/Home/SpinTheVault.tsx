@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Shuffle } from "lucide-react";
 import { WerdCard } from "../../components/werd/WerdCard";
 import { getRandomWerd } from "../../utils/supabase/queries";
-import type { Werd } from "../../types/types";
+import type { Werd } from "../../types/werd";
 
 export default function SpinTheVault() {
   const [werd, setWerd] = useState<Werd | null>(null);
