@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "esModuleInterop": true,
+    "module": "ESNext",
+    "target": "ES2020"
+  },
+  "exclude": [
+    "src/components/Label.tsx",
+    "src/components/MenuItem.tsx",
+    "src/components/MenuPopover.tsx",
+    "src/components/MenuSection.tsx",
+    "src/components/Modal.tsx",
+    "src/components/OverlayArrow.tsx",
+    "src/components/PageLayout.tsx",
+    "src/components/Popover.tsx",
+    "src/components/Radio.tsx",
+    "src/components/RadioGroup.tsx",
+    "src/components/RangeSlider.tsx",
+    "src/components/Select.tsx",
+    "src/components/Slider.tsx",
+    "src/components/SliderThumb.tsx",
+    "src/components/Switch.tsx",
+    "src/components/TextAreaInput.tsx",
+    "src/components/TextField.tsx",
+    "src/components/TextInput.tsx",
+    "src/components/Tooltip.tsx"
+  ]
+}

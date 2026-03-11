@@ -1,8 +1,12 @@
+import React from "react";
+
 interface TagProps {
   label: string;
-  index?: number; // used for gradient cycling
-  onClick?: () => void; // optional: makes tag a button
-  className?: string; // optional: extra styling
+  index?: number;
+  onClick?: () => void;
+  className?: string;
+  active?: boolean;
+  size?: "sm" | "md";
 }
 
 const chromeGradients = [
@@ -15,21 +19,44 @@ const chromeGradients = [
   "linear-gradient(135deg, #bdc3c7, #2c3e50)", // metallic chrome
 ];
 
-export function Tag({ label, index = 0, onClick, className = "" }: TagProps) {
+export function Tag({
+  label,
+  index = 0,
+  onClick,
+  className = "",
+  active = false,
+  size = "md",
+}: TagProps) {
   const gradient = chromeGradients[index % chromeGradients.length];
 
+  const sizeClasses =
+    size === "sm" ? "px-2.5 py-0.5 text-[10px]" : "px-3 py-1 text-xs";
+
   const baseClasses = `
-      px-3 py-1 rounded-full text-xs font-heading text-white shadow-sm
-      border border-white/10
-      hover:opacity-90 transition
-    `;
+    inline-flex items-center justify-center
+    rounded-full font-heading text-white
+    border border-white/10 shadow-sm
+    transition-all duration-200
+    hover:opacity-90
+    ${sizeClasses}
+    ${active ? "ring-2 ring-white/40 scale-[1.05]" : ""}
+  `;
+
+  const style = {
+    background: gradient,
+    boxShadow: active
+      ? "0 0 12px rgba(255,255,255,0.25)"
+      : "0 0 4px rgba(0,0,0,0.25)",
+  };
 
   if (onClick) {
     return (
       <button
+        type="button"
         onClick={onClick}
-        className={`${baseClasses} ${className}`}
-        style={{ background: gradient }}
+        aria-pressed={active}
+        className={`${baseClasses} cursor-pointer ${className}`}
+        style={style}
       >
         {label}
       </button>
@@ -37,10 +64,7 @@ export function Tag({ label, index = 0, onClick, className = "" }: TagProps) {
   }
 
   return (
-    <span
-      className={`${baseClasses} ${className}`}
-      style={{ background: gradient }}
-    >
+    <span className={`${baseClasses} ${className}`} style={style}>
       {label}
     </span>
   );

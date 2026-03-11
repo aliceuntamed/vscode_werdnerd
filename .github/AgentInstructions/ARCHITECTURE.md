@@ -21,43 +21,33 @@ werd nerd is a multi-page web application built with React 18 that contains a ps
 pages/
 ├── Homepage/  
 │ ├── Navigation  
-│ ├── Vibrant Hero Spotlight  
-│ ├── Daily Werd Teaser CTA
-│ ├── Werd Game CTA
+│ ├── Flipwords Hero
+│ ├── WOTD CTA
 │ ├── werd Vault Glimpse
-│ ├── Curated Collections  
-│ ├── Submit a Werd CTA
-│ ├── Gallery Sneak Peek
+│ ├── Spin the Vault
+│ ├── Curated Collections
+│ ├── Werd Game CTA
+│ ├── Palette Playground CTA  
 │ ├── Footer  
-├── werd Vault/  
+├── Word Vault/  
 │ ├── Navigation  
 │ ├── Vault Hero  
-│ ├── Curated Picks  
-│ ├── Fun Fact
-│ ├── Quick Browse  
-│ ├── werd of the Day Archive
-│ ├── Contribute a werd
-│ ├── Footer  
-├── werd Index/  
-│ ├── Navigation  
 │ ├── Searchable Alphabet Hero
+│ ├── Quick Browse
 │ ├── Alphabet Grid  
-│ ├── werd Groups  
-│ ├── Filter & Sort Controls
-│ ├── Quick werd Preview  
-│ ├── Random Werd
-│ ├── Index Insights
+│ ├── Submit a Word CTA
 │ ├── Footer
 ├── About/  
-│ ├── Navigation  
+│ ├── Navigation
+│ ├── How the Vault Works
+│ ├── FAQ
 │ ├── Quirky Intro Hero
 │ ├── Nerdy Origin & Mission  
-│ ├── How the Vault Works  
 │ ├── Submit / Follow CTA
 │ ├── the Werd Nerd's favorite werds  
-│ ├── Contact Info & FAQ
+│ ├── Contact Info
 │ ├── Footer
-├── Submit a werd/  
+├── Submit a Werd/  
 │ ├── Navigation  
 │ ├── Playful Prompt Hero
 │ ├── Login/Submit anonymously module
@@ -66,14 +56,14 @@ pages/
 │ ├── Recent Submissions Showcase
 │ ├── Share on Socials CTA
 │ ├── Footer
-├── Submit a werd/  
+├── Palette Playground/  
 │ ├── Navigation  
-│ ├── Playful Prompt Hero
-│ ├── Login/Submit anonymously module
-│ ├── werd Submission Form  
-│ ├── Submission Tips & Guidelines
-│ ├── Recent Submissions Showcase
-│ ├── Share on Socials CTA
+│ ├── Vibrant Hero
+│ ├── Quick Browse (styled)
+│ ├── Remix Modal
+│ ├── Typography Experiments
+│ ├── Login to save creations module
+│ ├── Combo Builder
 │ ├── Footer
 ├── Werd Game Play/  
 │ ├── Navigation  
@@ -82,6 +72,21 @@ pages/
 │ ├── Leaderboard  
 │ ├── Report Problem/Leave Comment CTA
 │ ├── Footer
+components/
+├── Navigation/  
+│ ├── Home/  
+│ ├── Word Vault/
+│ ├── About/
+│ ├── Submit Word/
+│ ├── Games/
+games/
+├── Boggle/  
+├── Wordle/
+├── Trivia/
+├── Hangman/
+├── WordSearch/
+├── Codenames/
+├── Brain Teasers/\*
 
 ## 🔄 Data Flow Architecture
 

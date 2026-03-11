@@ -2,56 +2,53 @@ import { WerdCard } from "../../components/werd/WerdCard";
 
 const sampleWerds = [
   {
-    word: "Eccedentesiast",
+    werd_id: "1",
+    werd: "Eccedentesiast",
     pronunciation: "ek-si-den-tee-see-ast",
-    partOfSpeech: "noun",
+    part_of_speech: "noun",
     definition: "Someone who hides pain behind a smile.",
-    tags: ["psychological", "emotional"],
+    tags: "psychological,emotional",
   },
   {
-    word: "Monachopsis",
+    werd_id: "2",
+    werd: "Monachopsis",
     pronunciation: "mon-ak-op-sis",
-    partOfSpeech: "noun",
+    part_of_speech: "noun",
     definition: "The subtle feeling of being out of place.",
-    tags: ["emotional", "existential"],
+    tags: "emotional,existential",
   },
   {
-    word: "Petrichor",
+    werd_id: "3",
+    werd: "Petrichor",
     pronunciation: "PET-ri-kor",
-    partOfSpeech: "noun",
+    part_of_speech: "noun",
     definition: "The pleasant, earthy smell after rain.",
-    tags: ["sensory", "nature"],
+    tags: "sensory,nature",
   },
   {
-    word: "Vellichor",
+    werd_id: "4",
+    werd: "Vellichor",
     pronunciation: "VEL-i-kor",
-    partOfSpeech: "noun",
+    part_of_speech: "noun",
     definition: "The strange wistfulness of used bookstores.",
-    tags: ["neologism", "poetic", "literary"],
+    tags: "neologism,poetic,literary",
   },
   {
-    word: "Limerence",
+    werd_id: "5",
+    werd: "Limerence",
     pronunciation: "LIM-er-ence",
-    partOfSpeech: "noun",
+    part_of_speech: "noun",
     definition: "The state of being infatuated with another person.",
-    tags: ["psychological", "modern", "romantic"],
+    tags: "psychological,modern,romantic",
   },
   {
-    word: "Sonorous",
+    werd_id: "6",
+    werd: "Sonorous",
     pronunciation: "SON-uh-rus",
-    partOfSpeech: "adjective",
+    part_of_speech: "adjective",
     definition: "An imposingly deep and full sound.",
-    tags: ["auditory", "descriptive"],
+    tags: "auditory,descriptive",
   },
-];
-
-const gradients = [
-  "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-  "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
-  "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-  "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
-  "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
-  "linear-gradient(135deg, #bdc3c7 0%, #2c3e50 100%)",
 ];
 
 export function QuickBrowse() {
@@ -70,16 +67,9 @@ export function QuickBrowse() {
           {sampleWerds.map((item, i) => (
             <WerdCard
               key={i}
-              word={item.word}
-              pronunciation={item.pronunciation}
-              partOfSpeech={item.partOfSpeech}
-              definition={item.definition}
-              gradient={gradients[i % gradients.length]}
-              index={i}
+              {...item}
               isFavorite={false}
               onToggleFavorite={() => {}}
-              onSpeak={() => {}}
-              tags={item.tags}
             />
           ))}
         </div>

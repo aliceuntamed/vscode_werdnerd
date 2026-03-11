@@ -1,0 +1,48 @@
+# .viteignore
+# Exclude these files/folders from Vite's dev server and build
+
+# Development files
+*.test.*
+*.spec.*
+__tests__/
+coverage/
+storybook/
+
+# Plasmic - exclude ALL generated components from build
+src/components/Label.tsx
+src/components/MenuItem.tsx
+src/components/MenuPopover.tsx
+src/components/MenuSection.tsx
+src/components/Modal.tsx
+src/components/OverlayArrow.tsx
+src/components/PageLayout.tsx
+src/components/Popover.tsx
+src/components/Radio.tsx
+src/components/RadioGroup.tsx
+src/components/RangeSlider.tsx
+src/components/Select.tsx
+src/components/Slider.tsx
+src/components/SliderThumb.tsx
+src/components/Switch.tsx
+src/components/TextAreaInput.tsx
+src/components/TextField.tsx
+src/components/TextInput.tsx
+src/components/Tooltip.tsx
+
+# Source files that shouldn't be bundled
+src/**/*.stories.tsx
+src/**/*.test.tsx
+src/dev-only/
+src/raw-data/
+
+# Large assets
+public/large-assets/
+*.psd
+*.ai
+*.sketch
+
+# Config and docs
+docs/
+.github/
+.vscode/
+*.md

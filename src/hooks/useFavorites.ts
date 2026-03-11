@@ -1,26 +1,50 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { supabase } from "../utils/supabase/client";
+import { toggleFavorite } from "../utils/supabase/favorites";
 
-const STORAGE_KEY = "word-vault-favorites";
+export function useFavorites(userId?: string) {
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [loading, setLoading] = useState(true);
 
-export function useFavorites() {
-  const [favorites, setFavorites] = useState<string[]>(() => {
-    if (typeof window === "undefined") return [];
-    
-    const stored = localStorage.getItem(STORAGE_KEY);
-    return stored ? JSON.parse(stored) : [];
-  });
-
+  // Load favorites on mount
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
-  }, [favorites]);
+    if (!userId) return;
 
-  const toggleFavorite = (word: string) => {
-    setFavorites(prev => 
-      prev.includes(word)
-        ? prev.filter(w => w !== word)
-        : [...prev, word]
-    );
+    async function load() {
+      setLoading(true);
+
+      const { data, error } = await supabase
+        .from("favorites")
+        .select("werd_id")
+        .eq("user_id", userId);
+
+      if (!error && data) {
+        setFavorites(data.map((f) => f.werd_id));
+      }
+
+      setLoading(false);
+    }
+
+    load();
+  }, [userId]);
+
+  // Toggle handler
+  async function toggle(werdId: string) {
+    if (!userId) return;
+
+    const newValue = await toggleFavorite(userId, werdId);
+
+    if (newValue === true) {
+      setFavorites((prev) => [...prev, werdId]);
+    } else if (newValue === false) {
+      setFavorites((prev) => prev.filter((id) => id !== werdId));
+    }
+  }
+
+  return {
+    favorites,
+    loading,
+    toggle,
+    isFavorite: (id: string) => favorites.includes(id),
   };
-
-  return { favorites, toggleFavorite };
 }

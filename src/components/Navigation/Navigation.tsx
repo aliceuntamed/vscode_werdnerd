@@ -5,16 +5,22 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
+  // Close mobile menu on route change
   useEffect(() => {
-    const timer = setTimeout(() => setIsOpen(false), 0);
-    return () => clearTimeout(timer);
+    setIsOpen(false);
   }, [location.pathname]);
 
-  const isActive = (path: string) => location.pathname === path;
-
   return (
-    <header className="fixed top-0 left-0 w-full h-16 z-50 bg-black/70 backdrop-blur-md border-b border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.4)] flex items-center">
-      <nav className="w-full max-w-6xl mx-auto px-6 flex items-center justify-between">
+    <header
+      className="
+      fixed top-0 left-0 w-full h-16 z-50
+      bg-black/70 backdrop-blur-md
+      border-b border-white/10
+      shadow-[0_4px_20px_rgba(0,0,0,0.4)]
+      flex items-center
+    "
+    >
+      <div className="w-full max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Brand */}
         <Link to="/" className="flex items-center gap-2">
           <svg
@@ -37,13 +43,14 @@ export default function Navigation() {
         </Link>
 
         {/* Desktop Links */}
-        <nav className="hidden md:flex items-center gap-8">
-          <NavLink to="/" label="Home" />
-          <NavLink to="/vault" label="Vault" />
-          <NavLink to="/submit" label="Submit Word" />{" "}
-          {/* NEW — between Vault and Games */}
-          <NavLink to="/games" label="Games" />
-        </nav>
+        <div className="hidden md:flex items-center gap-8">
+          <NavItem to="/" label="Home" />
+          <NavItem to="/vault" label="Vault" />
+          <NavItem to="/about" label="About" />
+          <NavItem to="/submit" label="Submit Word" />
+          <NavItem to="/games" label="Games" />
+          <NavItem to="/palette-playground" label="Palette Playground" />
+        </div>
 
         {/* Mobile Toggle */}
         <button
@@ -73,18 +80,57 @@ export default function Navigation() {
             </svg>
           )}
         </button>
-      </nav>
+      </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden flex flex-col gap-6 mt-6">
-          <MobileLink to="/" label="Home" />
-          <MobileLink to="/vault" label="Vault" />
-          <MobileLink to="/submit" label="Submit Word" />{" "}
-          {/* NEW — same order */}
-          <MobileLink to="/games" label="Games" />
+        <div
+          className="
+          absolute top-16 left-0 w-full
+          bg-black/80 backdrop-blur-xl
+          border-b border-white/10
+          flex flex-col gap-6 px-6 py-6 md:hidden
+        "
+        >
+          <MobileItem to="/" label="Home" />
+          <MobileItem to="/vault" label="Vault" />
+          <MobileItem to="/about" label="About" />
+          <MobileItem to="/submit" label="Submit Word" />
+          <MobileItem to="/games" label="Games" />
+          <MobileItem to="/palette-playground" label="Palette Playground" />
         </div>
       )}
     </header>
+  );
+}
+
+/* --- Subcomponents for clean code --- */
+
+function NavItem({ to, label }: { to: string; label: string }) {
+  return (
+    <Link
+      to={to}
+      className="
+        text-white hover:text-white/80 transition
+        font-body tracking-wide
+      "
+    >
+      {label}
+    </Link>
+  );
+}
+
+function MobileItem({ to, label }: { to: string; label: string }) {
+  return (
+    <Link
+      to={to}
+      className="
+        text-white text-lg
+        hover:text-white/80 transition
+        font-body tracking-wide
+      "
+    >
+      {label}
+    </Link>
   );
 }

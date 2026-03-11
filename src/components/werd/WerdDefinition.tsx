@@ -1,13 +1,13 @@
 interface WerdDefinitionProps {
   word: string;
   pronunciation?: string;
-  meaning: string;
+  definition: string;
 }
 
 export function WerdDefinition({
   word,
   pronunciation,
-  meaning,
+  definition,
 }: WerdDefinitionProps) {
   return (
     <div className="space-y-4">
@@ -23,8 +23,8 @@ export function WerdDefinition({
         </p>
       )}
 
-      {/* Meaning */}
-      <p className="font-body text-white/80 leading-relaxed">{meaning}</p>
+      {/* Definition */}
+      <p className="font-body text-white/80 leading-relaxed">{definition}</p>
     </div>
   );
 }

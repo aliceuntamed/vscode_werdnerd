@@ -1,15 +1,19 @@
-import { Footer } from "../components/layout/Footer";
+import React from "react";
 import Navigation from "../components/Navigation/Navigation";
+import { Footer } from "../components/layout/Footer";
+import ChromeTransition from "../components/ui/ChromeTransition";
 
-interface MainLayoutProps {
+export default function MainLayout({
+  children,
+}: {
   children: React.ReactNode;
-}
-
-export default function MainLayout({ children }: MainLayoutProps) {
+}) {
   return (
     <>
       <Navigation />
-      <main>{children}</main>
+      <ChromeTransition>
+        <main>{children}</main>
+      </ChromeTransition>
       <Footer />
     </>
   );

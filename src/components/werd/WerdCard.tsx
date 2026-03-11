@@ -1,25 +1,39 @@
-import { Heart } from "lucide-react";
 import { WerdTagList } from "./WerdTagList";
-import { Werd } from "../../../types/Werd";
+import type { Werd } from "../../types/types";
+import { FavoriteToggle } from "../../components/ui/FavoriteToggle";
 
 interface WerdCardProps extends Werd {
-  partOfSpeech?: string;
-  funfact?: string;
-  source?: string;
   isFavorite?: boolean;
   onToggleFavorite?: () => void;
+
+  // Visibility controls
+  showFavorite?: boolean;
+  showPronunciation?: boolean;
+  showPartOfSpeech?: boolean;
+  showDefinition?: boolean;
+  showTags?: boolean;
+  showLanguage?: boolean;
+  showSource?: boolean;
 }
 
 export function WerdCard({
-  word,
+  werd,
   pronunciation,
-  partOfSpeech,
-  meaning,
-  funfact,
-  source,
+  part_of_speech,
+  definition,
   tags,
+  language,
+  source,
   isFavorite,
   onToggleFavorite,
+
+  showFavorite = false,
+  showPronunciation = false,
+  showPartOfSpeech = false,
+  showDefinition = true,
+  showTags = true,
+  showLanguage = false,
+  showSource = false,
 }: WerdCardProps) {
   return (
     <div
@@ -41,52 +55,55 @@ export function WerdCard({
             opacity-70
           "
         />
-        <button
-          onClick={onToggleFavorite}
-          className="text-white/40 hover:text-white transition"
-        >
-          <Heart
-            className={`w-5 h-5 ${
-              isFavorite ? "fill-pink-400 text-pink-400" : ""
-            }`}
-          />
-        </button>
+
+        {showFavorite && (
+          <FavoriteToggle isFavorite={isFavorite} onToggle={onToggleFavorite} />
+        )}
       </div>
 
-      {/* Word */}
+      {/* Werd */}
       <h2 className="font-heading text-2xl text-white tracking-tight">
-        {word}
+        {werd}
       </h2>
 
       {/* Pronunciation */}
-      {pronunciation && (
+      {showPronunciation && pronunciation && (
         <p className="font-body text-white/50 italic text-sm mt-1">
           /{pronunciation}/
         </p>
       )}
 
       {/* Part of speech */}
-      {partOfSpeech && (
-        <p className="font-body text-white/40 text-sm mt-1">{partOfSpeech}</p>
+      {showPartOfSpeech && part_of_speech && (
+        <p className="font-body text-white/40 text-sm mt-1">{part_of_speech}</p>
+      )}
+
+      {/* Language */}
+      {showLanguage && language && (
+        <p className="font-body text-white/40 text-sm mt-1">{language}</p>
       )}
 
       {/* Tags */}
-      <WerdTagList tags={tags} />
-
-      {/* Definition */}
-      <p className="font-body text-white/80 mt-4 leading-relaxed">{meaning}</p>
-
-      {/* Fun fact */}
-      {funfact && (
-        <p className="font-body text-white/60 mt-4 italic">{funfact}</p>
+      {showTags && tags && (
+        <WerdTagList
+          tags={
+            Array.isArray(tags)
+              ? (tags as string[])
+              : (tags as string).split(",")
+          }
+        />
       )}
 
-      {/* Divider */}
-      <div className="my-6 h-px w-full bg-white/10" />
+      {/* Definition */}
+      {showDefinition && (
+        <p className="font-body text-white/80 mt-4 leading-relaxed">
+          {definition}
+        </p>
+      )}
 
       {/* Source */}
-      {source && (
-        <p className="font-body text-white/40 text-xs">Source: {source}</p>
+      {showSource && source && (
+        <p className="font-body text-white/40 text-xs mt-4">Source: {source}</p>
       )}
     </div>
   );

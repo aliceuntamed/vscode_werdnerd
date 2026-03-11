@@ -3,17 +3,14 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 // https://vite.dev/config/
+import { fileURLToPath } from "node:url";
+
+// More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
-  plugins: [
-    react({
-      babel: {
-        plugins: [["babel-plugin-react-compiler"]],
-      },
-    }),
-  ],
+  plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(path.dirname(fileURLToPath(import.meta.url)), "./src"),
     },
   },
   assetsInclude: ["**/*.svg", "**/*.csv"],
