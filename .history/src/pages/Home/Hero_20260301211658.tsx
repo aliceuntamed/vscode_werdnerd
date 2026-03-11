@@ -1,5 +1,5 @@
 import { Button } from "../../components/ui/Button";
-import { Flipwerds } from "../../components/ui/flipwords";
+import { Flipwords } from "../../components/ui/flipwords";
 
 export default function Hero() {
   return (
@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center flex flex-col items-center gap-8">
         <h1 className="font-heading text-4xl md:text-6xl tracking-tight bg-chrome-horizontal bg-clip-text text-transparent">
           A logophile's lexicon of{" "}
-          <Flipwerds
+          <Flipwords
             werds={["unusual", "curious", "obscure", "intriguing"]}
             duration={3000}
             className="text-white"

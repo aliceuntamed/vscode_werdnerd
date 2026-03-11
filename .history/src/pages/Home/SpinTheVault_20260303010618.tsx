@@ -7,7 +7,7 @@ import ContributeCTA from "../../components/ContributeCTA";
 export default function HomePage() {
   return (
     <main className="w-full min-h-screen bg-gradient-to-b from-[#0a0a0a] to-[#111] text-white">
-      {/* Hero with FlipWords */}
+      {/* Hero with Flipwords */}
       <section className="pt-20 pb-24">
         <HomeHero />
       </section>
