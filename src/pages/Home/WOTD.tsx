@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { WerdCard } from "../../components/werd/WerdCard";
-import { getWOTD } from "../../utils/supabase/queries/werds";
+import { getWOTD } from "../../utils/supabase/queries";
+import type { Werd } from "../../types/types";
 
-export function WOTD() {
-  const [werd, setWerd] = useState(null);
+export default function WOTD() {
+  const [werd, setWerd] = useState<Werd | null>(null);
 
   useEffect(() => {
     getWOTD().then(setWerd);
