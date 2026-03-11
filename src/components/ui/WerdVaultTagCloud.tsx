@@ -5,6 +5,8 @@ interface WerdVaultTagCloudProps {
   activeTag?: string | null;
   onSelect?: (tag: string) => void;
   className?: string;
+  size?: "sm" | "md";
+  gap?: string; // e.g. "gap-2" or "gap-4"
 }
 
 export function WerdVaultTagCloud({
@@ -12,19 +14,20 @@ export function WerdVaultTagCloud({
   activeTag = null,
   onSelect,
   className = "",
+  size = "md",
+  gap = "gap-3",
 }: WerdVaultTagCloudProps) {
   return (
-    <div className={`flex flex-wrap gap-3 ${className}`}>
+    <div className={`flex flex-wrap ${gap} ${className}`}>
       {tags.map((tag, i) => (
         <Tag
-          key={i}
+          key={tag}
           label={tag}
           index={i}
+          size={size}
+          active={activeTag === tag}
           onClick={() => onSelect?.(tag)}
-          className={`
-            cursor-pointer transition-all
-            ${activeTag === tag ? "ring-2 ring-white/40" : ""}
-          `}
+          className="cursor-pointer transition-all"
         />
       ))}
     </div>

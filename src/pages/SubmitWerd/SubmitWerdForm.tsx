@@ -1,133 +1,60 @@
-import React, { useState } from "react";
-import { supabase } from "../../utils/supabase/client";
+// pages/SubmitWord.tsx
+import { useState } from "react";
+import { supabase } from "@/supabase/client";
 
-export default function SubmitWordForm() {
-  const [word, setWord] = useState("");
-  const [pronunciation, setPronunciation] = useState("");
-  const [meaning, setMeaning] = useState("");
-  const [tags, setTags] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+export default function SubmitWord() {
+  const [werd, setWerd] = useState("");
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setLoading(true);
 
-    const tagArray = tags
-      .split(",")
-      .map((t) => t.trim().toLowerCase())
-      .filter(Boolean);
+    // 1. Insert werd
+    const { data: newWerd, error } = await supabase
+      .from("werds")
+      .insert({ werd })
+      .select()
+      .single();
 
-    const { error } = await supabase.from("werds").insert({
-      word,
-      pronunciation,
-      meaning,
-      tags: tagArray,
-    });
+    if (error) throw error;
 
-    setLoading(false);
+    // 2. Insert relational tags
+    for (const tagName of selectedTags) {
+      const { data: tag } = await supabase
+        .from("tags")
+        .select("tag_id")
+        .eq("tag_name", tagName)
+        .single();
 
-    if (!error) {
-      setSubmitted(true);
-      setWord("");
-      setPronunciation("");
-      setMeaning("");
-      setTags("");
+      await supabase.from("werd_tags").insert({
+        werd_id: newWerd.werd_id,
+        tag_id: tag.tag_id,
+        werd: newWerd.werd,
+        tag: tagName,
+      });
     }
-  }
 
-  if (submitted) {
-    return (
-      <div className="rounded-2xl p-[2px] bg-gradient-to-r from-[#e5e7eb] via-[#9bbcff] to-[#c084fc] shadow-[0_0_25px_rgba(155,188,255,0.25)]">
-        <div className="rounded-2xl bg-black/60 backdrop-blur-sm p-10 text-center space-y-6">
-          <h2 className="font-heading text-3xl text-white">Word Submitted</h2>
-
-          <p className="text-white/70 font-body">
-            Your contribution has been added to the vault.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
-            <button
-              onClick={() => setSubmitted(false)}
-              className="px-6 py-3 rounded-lg font-heading bg-white/10 border border-white/20 text-white hover:bg-white/20 transition"
-            >
-              Add Another
-            </button>
-
-            <a
-              href="/vault"
-              className="px-6 py-3 rounded-lg font-heading bg-white/5 border border-white/10 text-white/70 hover:bg-white/10 hover:text-white transition"
-            >
-              Return to Vault
-            </a>
-          </div>
-        </div>
-      </div>
-    );
+    setWerd("");
+    setSelectedTags([]);
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="rounded-2xl p-[2px] bg-gradient-to-r from-[#e5e7eb] via-[#9bbcff] to-[#c084fc] shadow-[0_0_25px_rgba(155,188,255,0.25)]"
-    >
-      <div className="rounded-2xl bg-black/60 backdrop-blur-sm p-10 space-y-6">
-        <div>
-          <label className="block mb-2 text-white/80 font-heading">Word</label>
-          <input
-            required
-            value={word}
-            onChange={(e) => setWord(e.target.value)}
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:border-white/30 focus:bg-white/10"
-            placeholder="e.g., Petrichor"
-          />
-        </div>
+    <form onSubmit={handleSubmit} className="max-w-xl mx-auto py-20">
+      <input
+        value={werd}
+        onChange={(e) => setWerd(e.target.value)}
+        className="w-full p-3 rounded bg-white/10 border border-white/20"
+        placeholder="Enter a new werd…"
+      />
 
-        <div>
-          <label className="block mb-2 text-white/80 font-heading">
-            Pronunciation
-          </label>
-          <input
-            value={pronunciation}
-            onChange={(e) => setPronunciation(e.target.value)}
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:border-white/30 focus:bg-white/10"
-            placeholder="e.g., PET-ri-kor"
-          />
-        </div>
+      {/* Tag selector UI goes here */}
 
-        <div>
-          <label className="block mb-2 text-white/80 font-heading">
-            Meaning
-          </label>
-          <textarea
-            required
-            value={meaning}
-            onChange={(e) => setMeaning(e.target.value)}
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:border-white/30 focus:bg-white/10 h-32"
-            placeholder="Describe the meaning of the word..."
-          />
-        </div>
-
-        <div>
-          <label className="block mb-2 text-white/80 font-heading">
-            Tags (comma‑separated)
-          </label>
-          <input
-            value={tags}
-            onChange={(e) => setTags(e.target.value)}
-            className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-white/40 focus:border-white/30 focus:bg-white/10"
-            placeholder="e.g., sensory, poetic, greek"
-          />
-        </div>
-
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full py-3 rounded-lg font-heading text-lg bg-white/10 border border-white/20 text-white hover:bg-white/20 transition disabled:opacity-40"
-        >
-          {loading ? "Submitting..." : "Submit Word"}
-        </button>
-      </div>
+      <button
+        type="submit"
+        className="mt-6 px-6 py-2 rounded bg-white/20 hover:bg-white/30"
+      >
+        Submit
+      </button>
     </form>
   );
 }

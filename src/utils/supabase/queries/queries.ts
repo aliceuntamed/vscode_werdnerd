@@ -1,5 +1,38 @@
+// supabase/queries.ts
+import { Werd } from "../../types/types";
+import { data } from "react-router-dom";
 import { supabase } from "../client";
-import type { Werd } from "@/types";
+
+// Fetch werds with their tags
+export async function fetchWerds(): Promise<Werd[]> {
+  const { data, error } = await supabase.from("werds").select(`
+      werd_id,
+      werd,
+      werd_tags (
+        tags:tag_id (
+          tag_name
+        )
+      )
+    `);
+
+  if (error) throw error;
+
+  return data.map((w) => ({
+    werd_id: w.werd_id,
+    werd: w.werd,
+    tags: w.werd_tags?.map((j) => j.tags.tag_name) ?? [],
+  }));
+}
+
+export async function fetchTags() {
+  const { data, error } = await supabase
+    .from("tags")
+    .select("*")
+    .order("tag_name");
+
+  if (error) throw error;
+  return data;
+}
 
 // Fetch all werds
 export async function getAllWerds(): Promise<Werd[]> {
@@ -55,8 +88,9 @@ export async function getWOTD(): Promise<Werd | null> {
     return random;
   }
 
-  return data?.werds as Werd | null;
+  return data?.werds?.[0] ?? null;
 }
+// Fetch curated picks
 export async function getCuratedPicks(): Promise<Werd[]> {
   const { data, error } = await supabase
     .from("werds")
@@ -71,3 +105,9 @@ export async function getCuratedPicks(): Promise<Werd[]> {
 
   return data as Werd[];
 }
+//Fetch all werds with their tags
+const werds = data.map((w) => ({
+  werd_id: w.werd_id,
+  werd: w.werd,
+  tags: w.werd_tags.map((j) => j.tags.tag_name),
+}));

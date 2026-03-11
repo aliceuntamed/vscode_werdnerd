@@ -1,50 +1,42 @@
-import { useEffect, useState } from "react";
-import { PageWrapper } from "../../components/layout/PageWrapper";
-import { Header } from "../../components/layout/Header";
-import { Footer } from "../../components/layout/Footer";
-import { ChromeSky } from "../../components/ui/ChromeSky";
-
-import { useUser } from "@supabase/auth-helpers-react";
-import { useFavorites } from "../../hooks/useFavorites";
-
-import { WerdCard } from "../../components/werd/WerdCard";
-import { getAllWerds } from "../../utils/supabase/queries/werds";
+// pages/WerdVaultPage.tsx
+import { useState } from "react";
+import { useWerds } from "@/hooks/useWerds";
+import { WerdVaultTagCloud } from "../WerdVault/WerdVaultTagCloud";
+import { WerdCard } from "@/components/werd/WerdCard";
+import { ChromeSky } from "@/components/ui/ChromeSky";
 
 export default function WerdVaultPage() {
-  const user = useUser();
-  const { isFavorite, toggle } = useFavorites(user?.id);
+  const [activeTag, setActiveTag] = useState<string | null>(null);
+  const { werds, loading } = useWerds(activeTag);
 
-  const [werds, setWerds] = useState([]);
-
-  useEffect(() => {
-    getAllWerds().then(setWerds);
-  }, []);
+  const allTags = Array.from(new Set(werds.flatMap((w) => w.tags))).sort();
 
   return (
-    <PageWrapper>
-      <ChromeSky className="-z-10 opacity-60" density="medium" />
+    <div className="relative min-h-screen bg-[#0b0b0d] text-white">
+      <ChromeSky className="absolute inset-0 -z-10 opacity-40" />
 
-      <Header />
+      <section className="max-w-5xl mx-auto px-6 py-20">
+        <h1 className="text-4xl font-heading mb-10">Werd Vault</h1>
 
-      <main className="relative z-10">
-        {werds.map((w) => (
-          <WerdCard
-            key={w.id}
-            {...w}
-            isFavorite={isFavorite(w.id)}
-            onToggleFavorite={() => toggle(w.id)}
-            showFavorite
-            showPronunciation
-            showPartOfSpeech
-            showDefinition
-            showTags
-            showLanguage
-            showSource
-          />
-        ))}
-      </main>
+        <WerdVaultTagCloud
+          tags={allTags}
+          activeTag={activeTag}
+          onSelect={(tag) =>
+            setActiveTag((prev) => (prev === tag ? null : tag))
+          }
+          className="mb-10"
+        />
 
-      <Footer />
-    </PageWrapper>
+        {loading ? (
+          <p className="text-white/60">Loading…</p>
+        ) : (
+          <div className="grid gap-6 md:grid-cols-2">
+            {werds.map((w) => (
+              <WerdCard key={w.werd_id} werd={w} />
+            ))}
+          </div>
+        )}
+      </section>
+    </div>
   );
 }
