@@ -142,18 +142,18 @@ export default function App() {
                 </Suspense>
               }
             />
-
-            <Route
-              path="/games/codenames"
-              element={
-                <Suspense fallback={<LoadingSpinner />}>
-                  <CodenamesPage />
-                </Suspense>
-              }
-            />
-          </Routes>
-        </MainLayout>
-      </ErrorBoundary>
+  
+           />
+           <Route
+          path="/games/codenames"
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <CodenamesPage />
+            </Suspense>
+          }
+        />
+      </Routes>
+      <SpeedInsights />
     </Router>
   );
 }
