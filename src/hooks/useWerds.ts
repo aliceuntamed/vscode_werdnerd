@@ -1,7 +1,7 @@
 // hooks/useWerds.ts
 import { useEffect, useState } from "react";
 import { fetchWerds } from "../utils/supabase/queries";
-import type { Werd } from "../types/types";
+import type { Werd } from "../types/werd";
 
 export function useWerds(activeTag?: string | null) {
   const [werds, setWerds] = useState<Werd[]>([]);

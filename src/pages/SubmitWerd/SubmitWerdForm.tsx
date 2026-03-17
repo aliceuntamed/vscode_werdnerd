@@ -1,6 +1,7 @@
 // pages/SubmitWord.tsx
 import { useState } from "react";
-import { supabase } from "@/supabase/client";
+import React from "react";
+import { supabase } from "../../utils/supabase/client";
 
 export default function SubmitWord() {
   const [werd, setWerd] = useState("");
@@ -28,7 +29,7 @@ export default function SubmitWord() {
 
       await supabase.from("werd_tags").insert({
         werd_id: newWerd.werd_id,
-        tag_id: tag.tag_id,
+        tag_id: tag?.tag_id || "",
         werd: newWerd.werd,
         tag: tagName,
       });

@@ -7,7 +7,7 @@ const sampleWerds = [
     pronunciation: "ek-si-den-tee-see-ast",
     part_of_speech: "noun",
     definition: "Someone who hides pain behind a smile.",
-    tags: "psychological,emotional",
+    tags: ["psychological", "emotional"],
   },
   {
     werd_id: "2",
@@ -15,7 +15,7 @@ const sampleWerds = [
     pronunciation: "mon-ak-op-sis",
     part_of_speech: "noun",
     definition: "The subtle feeling of being out of place.",
-    tags: "emotional,existential",
+    tags: ["emotional", "existential"],
   },
   {
     werd_id: "3",
@@ -23,7 +23,7 @@ const sampleWerds = [
     pronunciation: "PET-ri-kor",
     part_of_speech: "noun",
     definition: "The pleasant, earthy smell after rain.",
-    tags: "sensory,nature",
+    tags: ["sensory", "nature"],
   },
   {
     werd_id: "4",
@@ -31,7 +31,7 @@ const sampleWerds = [
     pronunciation: "VEL-i-kor",
     part_of_speech: "noun",
     definition: "The strange wistfulness of used bookstores.",
-    tags: "neologism,poetic,literary",
+    tags: ["neologism", "poetic", "literary"],
   },
   {
     werd_id: "5",
@@ -39,7 +39,7 @@ const sampleWerds = [
     pronunciation: "LIM-er-ence",
     part_of_speech: "noun",
     definition: "The state of being infatuated with another person.",
-    tags: "psychological,modern,romantic",
+    tags: ["psychological", "modern", "romantic"],
   },
   {
     werd_id: "6",
@@ -47,7 +47,7 @@ const sampleWerds = [
     pronunciation: "SON-uh-rus",
     part_of_speech: "adjective",
     definition: "An imposingly deep and full sound.",
-    tags: "auditory,descriptive",
+    tags: ["auditory", "descriptive"],
   },
 ];
 

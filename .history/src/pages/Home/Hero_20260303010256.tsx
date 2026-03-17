@@ -1,4 +1,4 @@
-import { FlipWords } from "../../components/ui/flipwords.tsx";
+import { Flipwords } from "../../components/ui/flipwords.tsx";
 
 export default function HomeHero() {
   return (
@@ -10,7 +10,7 @@ export default function HomeHero() {
       <div className="relative z-10 max-w-3xl mx-auto">
         <h1 className="font-heading text-4xl md:text-5xl tracking-tight bg-chrome-horizontal bg-clip-text text-transparent">
           A logophile’s lexicon of{" "}
-          <FlipWords
+          <Flipwords
             words={["unusual", "curious", "obscure", "intriguing"]}
             duration={3000}
             className="text-white"
