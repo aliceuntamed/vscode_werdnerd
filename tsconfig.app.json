@@ -29,5 +29,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "App.tsx", "main.tsx", "craco.config.js"]
 }

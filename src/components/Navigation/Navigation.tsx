@@ -49,7 +49,7 @@ export default function Navigation() {
           <NavItem to="/about" label="About" />
           <NavItem to="/submit" label="Submit Word" />
           <NavItem to="/games" label="Games" />
-          <NavItem to="/palette-playground" label="Palette Playground" />
+          <NavItem to="/creators-playground" label="Palette Playground" />
         </div>
 
         {/* Mobile Toggle */}
@@ -97,7 +97,7 @@ export default function Navigation() {
           <MobileItem to="/about" label="About" />
           <MobileItem to="/submit" label="Submit Word" />
           <MobileItem to="/games" label="Games" />
-          <MobileItem to="/palette-playground" label="Palette Playground" />
+          <MobileItem to="/creators-playground" label="Palette Playground" />
         </div>
       )}
     </header>

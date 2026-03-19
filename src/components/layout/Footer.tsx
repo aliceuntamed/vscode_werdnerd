@@ -61,9 +61,12 @@ export function Footer() {
                 <a className="hover:text-text-primary transition-colors">
                   Phonetic Fun
                 </a>
-                <a className="hover:text-text-primary transition-colors">
+                <Link
+                  to="/"
+                  className="hover:text-text-primary transition-colors"
+                >
                   Daily Rare werd
-                </a>
+                </Link>
               </nav>
             </div>
 
@@ -71,9 +74,12 @@ export function Footer() {
             <div>
               <h4 className="font-heading text-lg mb-4">Community</h4>
               <nav className="flex flex-col gap-2 text-sm text-text-muted">
-                <a className="hover:text-text-primary transition-colors">
+                <Link
+                  to="/submit"
+                  className="hover:text-text-primary transition-colors"
+                >
                   Submit a werd
-                </a>
+                </Link>
                 <a className="hover:text-text-primary transition-colors">
                   Nerd Forum
                 </a>
