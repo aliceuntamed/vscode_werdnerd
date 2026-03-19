@@ -6,7 +6,6 @@
 *.spec.*
 __tests__/
 coverage/
-storybook/
 
 # Plasmic - exclude ALL generated components from build
 src/components/Label.tsx
@@ -30,7 +29,6 @@ src/components/TextInput.tsx
 src/components/Tooltip.tsx
 
 # Source files that shouldn't be bundled
-src/**/*.stories.tsx
 src/**/*.test.tsx
 src/dev-only/
 src/raw-data/

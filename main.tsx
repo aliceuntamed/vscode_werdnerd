@@ -1,14 +1,13 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { builder } from "@builder.io/react";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
 import "./index.css";
-import App from "./App.tsx";
+import { builder } from "@builder.io/react";
 
-// Initialize Builder with your API key
-builder.init(import.meta.env.VITE_PUBLIC_BUILDER_KEY);
+builder.init(import.meta.env.VITE_BUILDER_API_KEY);
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
     <App />
-  </StrictMode>,
+  </React.StrictMode>,
 );
